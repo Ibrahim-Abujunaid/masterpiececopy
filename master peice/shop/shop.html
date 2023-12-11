@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- nav bar-section -->
+    <header class="header">
+        <div class="logo">
+            <img src="../img/logo/lynx22-removebg-preview.png" alt="">
+        </div>
+        <nav>
+            <ul id="nav1">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">Become A Renter</a></li>
+                <li class="active"><a href="/shop/shop.html">Book Now</a>
+                    <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
+                    <ul class="drop-down">
+                        <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
+                    </ul>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li id="contact"><a href="#">Contact us</a></li>
+                <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+                <li id="loginbtn"><a href="/login/login.html">Login</a></li>
+            </ul>
+
+        </nav>
+        <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
+    </header>
+    <!-- end header           -->
+
+    <!-- shop home section start -->
+    <div class="inventory">
+        <h2>Car Rent Shop</h2>
+        <div class="link">
+            <a href="../index.html">Home</a>
+            <span>>>></span>
+            <p>Car Rent Shop</p>
+        </div>
+    </div>
+    <!-- end home section  -->
+    <!-- arrivals section start -->
+    <section class="arrivals show">
+        <div class="col-1">
+            <div class="show-col">
+                <h5>Brands</h5>
+                <div class="checkBox" id="brands">
+                    
+                </div>
+            </div>
+
+            <div class="show-col">
+                <h5>Transmotion</h5>
+                <div class="checkBox">
+                    <input type="checkbox" name="gear" onchange="ge()" value="automatic">Automatic <br>
+                    <input type="checkbox" name="gear" onchange="ge()" value="manual">Manual <br>
+                </div>
+            </div>
+
+            <div class="show-col">
+                <h5>Fuel Type</h5>
+                <div class="checkBox" id="fuel_type">
+                    <input type="checkbox" name="fuel_type" onchange="fuel()" value="gas">Gas <br>
+                    <input type="checkbox" name="fuel_type" onchange="fuel()" value="disel">Disel <br>
+                    <input type="checkbox" name="fuel_type" onchange="fuel()" value="electric">Elecric <br>
+                    <input type="checkbox" name="fuel_type" onchange="fuel()" value="hybrid">Hybrid <br>
+                </div>
+            </div>
+            <div class="show-col">
+                <h5>Location</h5>
+                <div class="checkBox" id="location">
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="head">
+                <span>Showing of Results</span>
+                <div class="others">
+                    
+            <div class="show-col">
+                
+                <div class="searchBox">
+                    <input type="text" class="searchbar" id="searcher" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+                </div>
+                <select id="order_by" onchange="val()">
+                    <option selected>sort by default</option>
+                    <option value="low_price">sort by Low Price</option>
+                    <option value="high_price">sort by High Price</option>
+                </select>
+            </div>
+
+            <div class="arr-row row" id="shop">
+                
+
+                <div class="arr-col">
+                    <div class="img">
+                        <img src="../img/arrivals/08.jpg" alt="">
+                    </div>
+                    <h5>Mercedes Benz Car</h5>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="review">
+                            <span>Ahmad mohammad</span>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <span><i class="fa-solid fa-circle-exclamation"></i>Automatic</span>
+                        <span><i class="fa-solid fa-location-dot"></i>Amman</span>
+                        <span><i class="fa-solid fa-location-crosshairs"></i>elecric</span>
+                        <span><i class="fa-solid fa-car"></i>Car</span>
+                    </div>
+                    <div class="price">
+                        <p>100JD/Day</p>
+                        <button>Rent Now</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <img src="../img/logo/lynx22-removebg-preview.png" alt="">
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse excepturi
+                    ducimus quasi mollitia minima harum!</p>
+                <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
+                <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
+                <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Support Center</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Newsletter</h5>
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+                <input type="text" placeholder="your Email">
+                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>&copy; Copyright 2023 <span>Lynx Rides</span>All Right Reserved.</p>
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/Rolecheck.js"></script>
+    <script src="shop.js"></script>
+</body>
+
+</html>

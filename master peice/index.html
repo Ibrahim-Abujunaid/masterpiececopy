@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynx Rides</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- nav bar-section -->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/logo/lynx22-removebg-preview.png" alt="">
+        </div>
+        <nav>
+            <ul id="nav1">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#">Become A Renter</a></li>
+                <li><a href="/shop/shop.html">Book Now</a>
+                    <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
+                    <ul class="drop-down">
+                        <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
+                    </ul>
+                </li>
+                <li><a href="#about">About us</a></li>
+                <li id="contact"><a href="#">Contact us</a></li>
+                <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+                <li id="loginbtn"><a href="/login/login.html">Login</a></li>
+            </ul>
+            <a href="/Renter/renter.html"></a>
+        </nav>
+        <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
+    </header>
+    <!-- section one in home -->
+    <div class="home">
+        <div class="swiper myHome">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide slide-one">
+                    <div class="col-1">
+                        <h4>Welcome to Lynx Rides!</h4>
+                        <h1>Best way To Find<br>your <span>Dream</span>Car </h1>
+                        <p>Seamless rentals, your way. Rent a car or elevate your experience with a chauffeur – enjoy
+                            the journey, stress-free.</p>
+                        <div class="buttons">
+                            <a href="#"><button type="submit" class="AboutUs"><i
+                                        class="fa-solid fa-arrow-right"></i>About Us
+                                </button></a>
+                            <a href="/shop/shop.html"><button type="submit" class="Shop"><i
+                                        class="fa-solid fa-arrow-right"></i>Rent a Car!</button></a>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="./img/home/hero-1.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End section one -->
+    <!-- search section -->
+    <div class="search">
+        <div class="find">
+            <h3>Let's Find Your Perfect Car</h3>
+            <div class="find-row">
+                <div class="find-item">
+                    <h4>Brand Name</h4>
+                    <select id="brands">
+                        <option value="0">All</option>
+                    </select>
+                </div>
+                <div class="find-item">
+                    <h4>Rent Type</h4>
+                    <select id="driver">
+                        <option value="0">Rent Cars</option>
+                        <option value="1">Car with driver</option>
+                    </select>
+                </div>
+                <div class="find-item">
+                    <h4>Location</h4>
+                    <select id="location">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="find-item">
+                    <h4>fuel Type</h4>
+                    <select id="fuel_type">
+                        <option value="">All</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value='electric'>elecric</option>
+                        <option value="gas">Gas</option>
+                        <option value="disel">Disel</option>
+                    </select>
+                </div>
+                <div class="find-item">
+                    <h4>Price Range/Day</h4>
+                    <select id="price">
+                        <option value="">All</option>
+                        <option value="0,30">Less than 30JD</option>
+                        <option value="30,50">30JD-50JD</option>
+                        <option value="50,70">50JD-70JD</option>
+                        <option value="70,90">70JD-90JD</option>
+                        <option value="90,110">90JD-110JD</option>
+                        <option value="110,">More than 110JD</option>
+                    </select>
+                </div>
+                <div class="search-btn">
+                    <button onclick="find()"><i class="fa-solid fa-magnifying-glass"></i>Find Your Car</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end search -->
+    <!--  market section -->
+    <section class="market">
+        <div class="col-3">
+            <img class="one" src="./img/market/01.png" alt="">
+            <div class="service">
+                <img class="tow" src="./img/market/2.JPG" alt="">
+                <span class="text">5 years of <br> quality service</span>
+            </div>
+        </div>
+        <div class="col-4" id="about">
+            <h4><i class="fa-solid fa-car"></i>About Us</h4>
+            <h3>world largest <span>Car <br> Renter</span>Market Place</h3>
+            <p class="text">Premium cars, tailored options—seamless travel for your every journey.</p>
+            <p class="p1"><i class="fa-solid fa-forward-step"></i>Rent a car for self-driven freedom.</p>
+            <p class="p1"><i class="fa-solid fa-forward-step"></i>Indulge in chauffeur-driven luxury.</p>
+            <p class="p1"><i class="fa-solid fa-forward-step"></i>Experience convenience on your terms.</p>
+            <a href="/CarWdriver/CarWdriver.html"><button>Rent Car with driver <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+    </section>
+    <!--  counter section -->
+    <div class="counter" id="counterContainer">
+
+    </div>
+    <!-- end counter -->
+    <!-- start view cars -->
+    <section class="arrivals">
+        <h4><i class="fa-solid fa-car"></i>new arrivals</h4>
+        <h1>let's check latest <span>cars</span></h1>
+        <div class="arr-row" id="carContainer"></div>
+
+        <h4><i class="fa-solid fa-car with"></i>new arrivals</h4>
+        <h1>let's check latest <span>Cars With Driver</span></h1>
+        <div class="arr-row" id="carContainer1"></div>
+    </section>
+    <!-- end view cars -->
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <img src="./img/logo/lynx22-removebg-preview.png" alt="">
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse excepturi
+                    ducimus quasi mollitia minima harum!</p>
+                <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
+                <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
+                <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Support Center</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Newsletter</h5>
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+                <input type="text" placeholder="your Email">
+                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>&copy; Copyright 2023 <span>Lynx Rides</span>All Right Reserved.</p>
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="Rolecheck.js"></script>
+    <script src="index.js"></script>
+</body>
+<a href=""></a>
+
+</html>

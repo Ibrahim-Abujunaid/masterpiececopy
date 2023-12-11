@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renter</title>
+    <link rel="stylesheet" href="renter.css">
+    <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- nav bar-section -->
+    <header class="header">
+        <div class="logo">
+           <a href="/index.html"><img src="../img/logo/lynx22-removebg-preview.png" alt=""></a>
+        </div>
+        <nav>
+            <ul id="nav1">
+                <li class="active"><a href="renter.html">Dashboard</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li id="addBtn"><a href="/profile/profile.html">Profile</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+
+        </nav>
+        <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
+    </header>
+    <!-- end header           -->
+
+    <!-- start renter -->
+    <section>
+        <div class="name">
+            <h2>List Of all Mr. <span id="name"> Ibrahim Abujunaid</span> rentals</h2>
+            
+            <button id="addCar"><i class="fa-solid fa-plus"></i>Add Car</button>
+        </div>
+        <div class="admin-content">
+            <div class="content">
+                <table>
+                    <thead>
+                        <th>Available</th>
+                        <th> Image </th>
+                        <th>Car Name</th>
+                        <th>transimision</th>
+                        <th>fuel type</th>
+                        <th>Location</th>
+                        <th>Driver?</th>
+                        <th>Cost</th>
+                        <th>Status</th>
+                        <th colspan="2">Action</th>
+                    </thead>
+                    <tbody id="carTableBody">
+                        
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <!-- // Admin Content -->
+
+
+    </section>
+    <!-- end Car renter -->
+    <div class="add-car-form" id="addCarForm">
+        <h2>Add a New Car</h2>
+        <form id="carForm" enctype="multipart/form-data">
+                   
+            <label for="carName">BrandName:</label>
+            <select id="brands" name="BrandName"></select>
+
+            
+
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission" required>
+                <option value="automatic">Automatic</option>
+                <option value="manual">Manual</option>
+            </select>
+
+            <label for="fuelType">Fuel Type:</label>
+            <select id="fuelType" name="fuelType" required>
+                <option value="gas">Gas</option>
+                <option value="electric">Electric</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="disel">Diesel</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location"></select>
+
+            <label for="driver">Driver:</label>
+            <select id="driver" name="driver" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="cost">Cost Per Day:</label>
+            <input type="number" id="cost" placeholder="should inter a number">
+
+            <label for="carImage">Car Image:</label>
+            <input type="file" id="carImage" name="files[]" multiple accept="image/*" required>
+
+            <label for="Licence">Car License:</label>
+            <input type="file" id="CarLicense" name="files[]" multiple accept="image/*">
+
+            <button id="addVehicle" type="submit">Add Car</button>
+        </form>
+        <button id="closeForm">Close Form</button>
+    </div>
+    <!-- end form -->
+    <!-- popup -->
+    <div id="driverPopup" class="driver-popup">
+        <h2>Driver Details</h2>
+        <form id="driverDetailsForm" enctype="multipart/form-data">
+            <label for="driverImage">Driver Image:</label>
+            <input type="file" id="driverImage" name="driverImage" required>
+
+            <label for="driverLicense">Driver License:</label>
+            <input type="file" id="driverLicense" name="driverLicense" required>
+
+            <label for="driverAge">Age:</label>
+            <input type="number" id="driverAge" name="driverAge" required>
+
+            <button id="submitDriverDetails" type="submit">Submit</button>
+            <button id="closeDriverPopup" type="button">Close</button>
+        </form>
+    </div>
+
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <img src="../img/logo/lynx22-removebg-preview.png" alt="">
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse excepturi
+                    ducimus quasi mollitia minima harum!</p>
+                <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
+                <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
+                <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Support Center</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Newsletter</h5>
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+                <input type="text" placeholder="your Email">
+                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>&copy; Copyright 2023 <span>Lynx Rides</span>All Right Reserved.</p>
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+
+
+    <script src="renter.js"></script>
+</body>
+
+</html>

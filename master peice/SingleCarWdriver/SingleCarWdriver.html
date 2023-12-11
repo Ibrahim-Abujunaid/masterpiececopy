@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Car</title>
+    <link rel="stylesheet" href="SingleCarWdriver.css">
+    <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+    <!-- nav bar-section -->
+    <header class="header">
+        <div class="logo">
+            <img src="../img/logo/lynx22-removebg-preview.png" alt="">
+        </div>
+        <nav>
+            <ul id="nav1">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">Become A Renter</a></li>
+                <li class="active"><a href="/shop/shop.html">Book Now</a>
+                    <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
+                    <ul class="drop-down">
+                        <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
+                    </ul>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li id="contact"><a href="#">Contact us</a></li>
+                <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+                <li id="loginbtn"><a href="/login/login.html">Login</a></li>
+            </ul>
+
+        </nav>
+        <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
+    </header>
+    <!-- end header           -->
+    
+    <!-- section single product -->
+    <section id="car_info">
+
+        <div class="singleimg">
+        <div id="driver">
+            
+        </div>
+            <img src="" alt="Car" id="carImage">
+        </div>
+        <div class="information">
+            <h2 id="carName">Audi A22</h2>
+            <div>
+                <label for="rentalDate">Rental Date</label>
+                <input type="date" placeholder="Enter RentalDate" id="rentalDate" >
+            </div>
+            <div>
+                <label for="returnDate">Return Date</label>
+                <input type="date" placeholder="Enter ReturnDate"  id="returnDate" >
+            </div>
+            <div class="informations" id="carDetails">
+                <!-- Car details will be populated here -->
+            </div>
+            <div class="price">
+                <div>
+                    <h3>Price</h3>
+                </div>
+                <div>
+                    <p><span class="cost" id="pricePerDay">100.00</span>/Day</p>
+                </div>
+            </div>
+            <div>
+                <a href=""><button id="submit">Confirm Rent</button></a>
+            </div>
+        </div>
+    </section>
+    <!-- end section single product -->
+    <section id="comment">
+        <h2>comments</h2>
+        <div class="container mt-1 mb-1 " id="comments">
+            <div class="d-flex justify-content-center row">
+                <div class="d-flex flex-column col-md-8">
+                    <div class="coment-bottom bg-white p-2 px-4">
+                        <div class="d-flex flex-row add-comment-section mt-4 mb-4"><input id="commentInput" type="text"
+                                class="form-control mr-5" placeholder="Add comment"><button onclick="postComment()" id="commentButton"
+                                class="btn btn-danger" type="button">Comment</button></div>
+                        <div class="commented-section mt-2" id="commentSection">
+                            <!-- comments here -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section start -->
+    <section class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <img src="../img/logo/lynx22-removebg-preview.png" alt="">
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse excepturi
+                    ducimus quasi mollitia minima harum!</p>
+                <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
+                <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
+                <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Support Center</h5>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>About Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Contact Us</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Testimonials</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Terms Of service</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Privecy policy</a>
+                <a href="#"><i class="fa-solid fa-chevron-right"></i>Our Dealers</a>
+            </div>
+            <div class="footer-col">
+                <h5>Newsletter</h5>
+                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+                <input type="text" placeholder="your Email">
+                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>&copy; Copyright 2023 <span>Lynx Rides</span>All Right Reserved.</p>
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    <script src="/Rolecheck.js"></script>
+    <script src="SingleCarWdriver.js"></script>
+</body>
+
+</html>

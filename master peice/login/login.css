@@ -1,0 +1,254 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: 0px;
+}
+
+.header {
+    width: auto;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: #fff;
+    box-shadow: 0 0 5px rgb(190, 190, 190, 0.5);
+    z-index: 112;
+    transition: 0.4s ease;
+}
+.header.sticky{
+    padding: 0 9.5%;
+}
+
+.logo img {
+    width: 200px;
+}
+
+ul {
+    list-style: none;
+}
+
+#nav1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    position: relative;
+    margin-right: 20px;
+    list-style: none;
+    position: relative;
+}
+
+#nav1 li a {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+}
+
+li:hover,
+.active {
+    color: #d30d0d;
+}
+
+#addBtn {
+    position: relative;
+    color: #fff;
+    background-color: #d30d0d;
+    padding: 1.1rem 1.3rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+#addBtn:hover {
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.drop-down {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    width: 150px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(190, 190, 190, 0.5);
+    padding: 1rem 0 0;
+    display: none;
+}
+
+.drop-down span {
+    border-bottom: 1px solid rgb(190, 190, 190, 0.5);
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.drop-down span a {
+    transition: 0.4 ease;
+}
+
+.drop-down span a:hover {
+    font-size: 1.1rem;
+    transition: 0.4s;
+    padding-left: 0.4rem;
+}
+
+#nav1 li:hover .drop-down {
+    display: flex;
+}
+#menu{
+    display: none;
+}
+
+/* media query */
+@media(max-width:900px) {
+    #nav1 li {
+        padding: 1rem 0;
+    }
+
+    #addBtn {
+        text-align: center;
+    }
+
+}
+
+@media(max-width:740px) {
+    .header{
+        width: 100%;
+    }
+    #nav1 {
+        position: absolute;
+        top: 5.3rem;
+        width: 100%;
+        left: 0px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgb(190, 190, 190, 0.5),
+            0 0 10px rgb(190, 190, 190, 0.5);
+        padding-left: 30px;
+        transition: 0.5s ease-in-out;
+        justify-content: center;
+        display: block;
+        transform:translateX(-1000px);
+    }
+    #nav1.activ{
+        transform: translateX(0px);
+    }
+
+    #addBtn {
+        text-align: center;
+        width: 25%;
+    }
+    .drop-down{
+        position: sticky;
+        display: none;
+    } 
+    #menu{
+        font-size: 2.5rem;
+        display: flex;
+        cursor: pointer;
+    }
+
+}
+
+@media(max-width:400px) {
+    .logo img {
+        width: 120px;
+    }
+}
+/* login */
+section {
+    background-color: #f2f2f2;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px; /* Adjust the margin as needed */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d30d0d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+.login-error {
+    color: #d30d0d;
+    margin-top: 10px;
+}
+.login-link {
+    margin-top: 10px;
+    text-align: center;
+    color: #555;
+}
