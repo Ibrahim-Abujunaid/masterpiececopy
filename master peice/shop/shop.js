@@ -78,6 +78,10 @@ function getStarIcons(averageRating) {
 }
 
 
+function search(){
+  url+='&search='+document.getElementById('search_bar').value;
+  mainFetch();
+}
 function val() {
   let order = document.querySelector('#order_by').value;
   console.log(order);
