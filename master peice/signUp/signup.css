@@ -292,3 +292,6 @@ button:hover {
     color: #d30d0d; /* Change color when the radio button is checked */
     font-weight: bold;
 }
+#privacy{
+    color: #d30d0d;
+}

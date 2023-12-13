@@ -11,12 +11,20 @@ function fetchAndPopulateTable() {
 // Function to populate the table with data
 function populateTable(data) {
     const tableBody = document.getElementById("userTableBody");
+    const searchInput = document.getElementById("search");
+    const searchTerm = searchInput.value.toLowerCase();
 
     // Clear existing rows
     tableBody.innerHTML = "";
 
-    // Iterate through the data and create table rows
-    data.forEach((user, index) => {
+    // Filter data based on the search term
+    const filteredData = data.filter(user =>
+        user.name.toLowerCase().includes(searchTerm) ||
+        user.email.toLowerCase().includes(searchTerm)
+    );
+
+    // Iterate through the filtered data and create table rows
+    filteredData.forEach((user, index) => {
         const row = document.createElement("tr");
 
         // Create cells for each column
@@ -26,7 +34,6 @@ function populateTable(data) {
             <td>${user.phone}</td>
             <td>${user.email}</td>
             <td>Landloard</td>
-            <td>${user.car_count}</td>
             <td class="edit"><a href="edit4.html?id=${user.id}"><i class="fa-solid fa-pen"></a></td>
             <td class="delete" onclick="deleteUser(${user.id})"><i class="fa-solid fa-trash"></i></td>
         `;
@@ -59,6 +66,12 @@ function deleteUser(userId) {
 
 // Initial population of the table
 fetchAndPopulateTable();
+
+// Event listener for the search input
+document.getElementById("search").addEventListener("input", function() {
+    // Update the table based on the new search term
+    fetchAndPopulateTable();
+});
 
 const isLoggedIn = sessionStorage.getItem('isLoggedin');
 let Logout = document.getElementById('Logout');

@@ -424,7 +424,7 @@ h6 {
     font-size: 12px;
 }
 
-p {
+.why {
     font-size: 1.45rem;
     line-height: 1.4;
     color: #465b52;
@@ -517,8 +517,8 @@ p {
 }
 
 .testimonial img {
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;

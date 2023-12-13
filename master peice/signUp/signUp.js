@@ -13,6 +13,7 @@ function validateSignupForm() {
     var userRadio = document.getElementById("userRadio").checked;
     var renterRadio = document.getElementById("renterRadio").checked;
     var errorElement = document.getElementById("signupError");
+    var privacy=document.getElementById("PrivacyCheckbox").checked;
 
     // Simple name validation
     if (!name || !name.match(/^[A-Za-z ]+$/)) {
@@ -47,6 +48,11 @@ function validateSignupForm() {
     // Check if the age checkbox is checked
     if (!ageCheckbox) {
         errorElement.textContent = "You must be above 18 years old";
+        return;
+    }
+
+    if (!privacy) {
+        errorElement.textContent = "You must accept terms & conditions ";
         return;
     }
 

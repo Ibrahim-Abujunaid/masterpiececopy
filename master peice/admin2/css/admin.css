@@ -83,11 +83,14 @@ form div {
   margin-bottom: 15px;
 }
 .hover:hover img{
-  width: 300px;
+  width: 350px;
   transition: ease 0.4s;
   height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-} 
+}
 #Logout{
   cursor: pointer;
 }
@@ -109,6 +112,6 @@ form div {
 /* Hover State */
 #search:hover,
 #search:focus {
-  border-color: #3498db;
+  border-color: #d30d0d;
   outline: none;
 }
