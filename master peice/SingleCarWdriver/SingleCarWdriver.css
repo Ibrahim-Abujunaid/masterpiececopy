@@ -538,3 +538,6 @@ button#submit:hover {
     color: #d30d0d; /* Color of the bullet point */
     margin-right: 5px;
 }
+#loginbtn{
+    cursor: pointer;
+}

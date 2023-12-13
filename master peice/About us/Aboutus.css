@@ -572,3 +572,6 @@ h6 {
     font-size: 1.46rem;
     line-height: 1.5;
 }
+#loginbtn{
+    cursor: pointer;
+}

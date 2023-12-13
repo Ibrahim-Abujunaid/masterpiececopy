@@ -496,4 +496,6 @@ button#submit:hover {
   #comments::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Color of the scrollbar thumb on hover */
   }
-  
+  #loginbtn{
+    cursor: pointer;
+}

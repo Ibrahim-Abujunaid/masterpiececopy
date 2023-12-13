@@ -431,3 +431,6 @@ li:hover,
  .edit-button button:focus {
    outline: none;
  }
+ #loginbtn{
+    cursor: pointer;
+}
