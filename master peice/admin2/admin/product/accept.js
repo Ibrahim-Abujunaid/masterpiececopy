@@ -28,6 +28,7 @@ data.forEach(car => {
         <td>${car.price_day}/Day</td>
         <td><i class="fa-solid ${car.availability}"></i></td>
         <td class="edit">Accepted</td>
+        <td class="delete" onclick="delete(${car.id})"><i class="fa-solid fa-trash"></i></td>
     `;
 
     tableBody.appendChild(row);

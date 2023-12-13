@@ -39,12 +39,15 @@ document.getElementById('updateForm').addEventListener('submit', function (event
         }),
     })
     .then(response => response.json())
+    
     .then(updatedData => {
+        
         alert('User data updated:', updatedUsername)
         window.location.href='index.html'
         // Handle success, e.g., show a success message
         console.log('User data updated:', updatedData);
     })
+    
     .catch(error => console.error('Error updating user data:', error));
 });
 

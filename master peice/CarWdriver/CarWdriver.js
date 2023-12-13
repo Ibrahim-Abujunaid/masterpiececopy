@@ -82,6 +82,10 @@ function val(){
   url+=`&order_by=${order}`;
   mainFetch();
 }
+function search(){
+  url+='&search='+document.getElementById('search_bar').value;
+  mainFetch();
+}
 function ge(){
     const gearIds = [...document.querySelectorAll('input[name="gear"]:checked')] .map(checkBox => checkBox.value);
   const urlParams = new URLSearchParams(url);

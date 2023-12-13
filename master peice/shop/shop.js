@@ -76,6 +76,10 @@ function getStarIcons(averageRating) {
 
   return starsHtml !== '' ? starsHtml : 'New'; // Return 'New' if starsHtml is empty
 }
+function search(){
+  url+='&search='+document.getElementById('search_bar').value;
+  mainFetch();
+}
 
 
 function val() {

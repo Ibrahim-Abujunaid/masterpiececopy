@@ -94,3 +94,21 @@ form div {
 #myChart{
   margin: 4% auto;
 }
+
+#search {
+  
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 9%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Hover State */
+#search:hover,
+#search:focus {
+  border-color: #3498db;
+  outline: none;
+}

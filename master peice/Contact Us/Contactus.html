@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="profile.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="Contactus.css">
     <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <!-- header section start -->
+    <!-- nav bar-section -->
     <header class="header">
         <div class="logo">
             <img src="../img/logo/lynx22-removebg-preview.png" alt="">
         </div>
         <nav>
             <ul id="nav1">
-                <li class="active"><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Home</a></li>
                 <li><a href="/shop/shop.html">Book Now</a>
                     <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
                     <ul class="drop-down">
@@ -23,7 +25,7 @@
                     </ul>
                 </li>
                 <li><a href="/About us/Aboutus.html">About us</a></li>
-                <li id="contact"><a href="/Contact Us/Contactus.html">Contact us</a></li>
+                <li class="active" id="contact"><a href="/Contact Us/Contactus.html">Contact us</a></li>
                 <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
                 <li id="loginbtn"><a href="/login/login.html">Login</a></li>
             </ul>
@@ -31,47 +33,107 @@
         </nav>
         <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
     </header>
-    <!-- header section end -->
+    <!-- end header           -->
 
-     <!-- profile section start -->
-     <div class="profile-container">
-        <div class="profile-picture">
-          <img
-            id="profileImage"
-            src="../img/team/t-2.jpg"
-            alt="User Profile Picture"
-          />
+    <!-- shop home section start -->
+    <div class="inventory">
+        <h2>Contact Us</h2>
+        <div class="link">
+            <a href="../index.html">Home</a>
+            <span>>>></span>
+            <p>Contact Us</p>
         </div>
-        <div class="profile-info">
-            <p name="type" id="UserType"><strong>Type:</strong>Renter</p>
-          <p name="username" id="username"><strong>Username:</strong> Muneer ahmad</p>
-          <p name="phoneNumber" id="phoneNumber"><strong>phoneNumber:</strong>0798741235</p>
-          <p name="email" id="email"><strong>Email:</strong> Muneer@example.com</p>
-          <p name="password" id="password"><strong>password:</strong>******</p>
+    </div>
+    <!-- end home section  -->
+    <!-- contact  -->
+    <div id="hey">
+    <section>
+    
+        <div class="section-header">
+          <div class="container">
+            <p>Connect with Lynex Rides today for a seamless car rental experience. Your journey begins with us – contact us now</p>
+          </div>
         </div>
-        <div class="edit-button">
-          <button>
-            <a href="edit.html">Edit Information</a>
-          </button>
-          <button onclick="orders()" id="order">
-            Your Orders
-          </button>
+        
+        <div class="container">
+          <div class="row">
+            
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Address</h4>
+                  <p>4671 Sugar Camp Road,<br/> Owatonna, Minnesota, <br/>55060</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Phone</h4>
+                  <p>571-457-2321</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="contact-info-content">
+                  <h4>Email</h4>
+                 <p>ntamerrwael@mfano.ga</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-form">
+              <form action="" id="contact-form">
+                <h2>Send Message</h2>
+                <div class="input-box">
+                  <input type="text" required="true" name="">
+                  <span>Full Name</span>
+                </div>
+                
+                <div class="input-box">
+                  <input type="email" required="true" name="">
+                  <span>Email</span>
+                </div>
+                
+                <div class="input-box">
+                  <textarea required="true" name=""></textarea>
+                  <span>Type your Message...</span>
+                </div>
+                
+                <div class="input-box">
+                  <input type="submit" value="Send" name="">
+                </div>
+              </form>
+            </div>
+            
+          </div>
         </div>
-      </div>
-     <!-- profile section end -->
+      </section>
+    </div>
 
+    <!--  end contact -->
 
-
-      <!-- footer section start -->
+    <!-- footer section start -->
     <section class="footer">
         <div class="footer-row">
             <div class="footer-col">
                 <img src="../img/logo/lynx22-removebg-preview.png" alt="">
                 <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse excepturi
                     ducimus quasi mollitia minima harum!</p>
-                  <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
-                  <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
-                  <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
+                <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
+                <span><i class="fa-solid fa-location-dot"></i>123D al-Salt, Jordan</span>
+                <span><i class="fa-regular fa-envelope"></i>info@gmail.com</span>
             </div>
             <div class="footer-col">
                 <h5>Quick Links</h5>
@@ -108,7 +170,8 @@
             <i class="fa-brands fa-youtube"></i>
         </div>
     </div>
+    <script src="contact.js"></script>
     <script src="/Rolecheck.js"></script>
-    <script src="profile.js"></script>
 </body>
+
 </html>
