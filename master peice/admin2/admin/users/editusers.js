@@ -45,7 +45,7 @@ document.getElementById('updateForm').addEventListener('submit', function (event
         // Handle success, e.g., show a success message
         console.log('User data updated:', updatedData);
     })
-    .catch(error => console.error('Error updating user data:', error));
+    
 });
 
 const isLoggedIn = sessionStorage.getItem('isLoggedin');

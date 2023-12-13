@@ -67,12 +67,13 @@
             <div class="button-group">
                 <a href="create.html" class="btn btn-big">Active Orders</a>
                 <a href="index.html" class="btn btn-big">Pending Orders</a>
+                <input type="text" id="search" placeholder="Search...">
             </div>
 
 
             <div class="content">
 
-                <h2 class="page-title">Pending Orders</h2>
+                <h2 class="page-title">Accepted Orders</h2>
 
                 <table>
                     <thead>
@@ -85,7 +86,7 @@
                         <th>Driver?</th>
                         <th>Price</th>
                         <th>Available</th>
-                        <th>Action</th>
+                        <th colspan="2">Action</th>
                     </thead>
                     <tbody id="acceptedOrdersTableBody"></tbody>
                 </table>
