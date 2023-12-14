@@ -34,6 +34,7 @@ function populateTable(data) {
             <td>${user.phone}</td>
             <td>${user.email}</td>
             <td>Landloard</td>
+            <td>${user.car_count}</td>
             <td class="edit"><a href="edit4.html?id=${user.id}"><i class="fa-solid fa-pen"></a></td>
             <td class="delete" onclick="deleteUser(${user.id})"><i class="fa-solid fa-trash"></i></td>
         `;

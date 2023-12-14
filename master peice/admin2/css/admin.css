@@ -37,7 +37,7 @@ header {
   height: 100%;
   padding: 40px 50px 100px;
   overflow-y: scroll;
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(244 ,244, 244);
 }
 .admin-content .page-title {
   text-align: center;
