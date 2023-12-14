@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $cars = Car::where('cars.status', 'Accept')->where('cars.status', 'Accept')->count();
-        $carsWithDriver = Car::where('withDriver', 1)->count();
+        $cars = Car::where('cars.status', 'Accept')->where('cars.availability', 1)->count();
+        $carsWithDriver = Car::where('withDriver', 1)->where('cars.status', 'Accept')->where('cars.availability', 1)        ->count();
         $client= Rent::count();
 
         return response()->json(['Cars'=>$cars,'CarWithDriver'=>$carsWithDriver,'Client'=>$client]) ;
