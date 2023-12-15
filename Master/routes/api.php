@@ -49,3 +49,4 @@ Route::resource('supscribe', EmailController::class);
 
 Route::get('count',[HomeController::class,'index']);
 Route::get('Avg/{id}',[ReviewController::class,'average']);
+Route::get('order_sum',[RentController::class,'order']);

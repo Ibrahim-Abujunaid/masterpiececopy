@@ -8,6 +8,7 @@ use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
 use DateTime;
+use Carbon\Carbon;
 
 class RentController extends Controller
 {
@@ -161,5 +162,20 @@ class RentController extends Controller
     {
         $rent->delete();
         return response()->json('done');
+    }
+    public function order()
+    {
+        $today = Carbon::today();
+        $lastTenDays = $today->subDays(10);
+      
+        $ordersByDate = [];
+        for ($i = 0; $i < 10; $i++) {
+          $currentDate = $lastTenDays->addDay(1);
+          $ordersByDate[$currentDate->format('Y-m-d')] = Rent::whereDate('created_at', $currentDate)
+            ->select(DB::raw('SUM(total_price) as order_day'))
+            ->get();
+        }
+      
+        return response()->json($ordersByDate);
     }
 }
