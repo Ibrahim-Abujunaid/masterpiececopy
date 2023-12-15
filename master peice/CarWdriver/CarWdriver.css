@@ -319,7 +319,7 @@ li:hover,
 }
 @media(max-width:600px) {
     .footer .footer-row{
-        text-align: center;
+        text-align: justify;
         grid-template-columns: 1fr;
     }
 }
@@ -492,6 +492,7 @@ section{
     text-align: justify;
     height: auto;
     
+    
 }
 .arr-row .arr-col .img{
    width: 100%;
@@ -568,15 +569,34 @@ section{
     background-color: #141622;
     transition: 0.5s;
 }
+@media(max-width:995px) {
+    .arrivals.show .col-2 .head{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .arrivals.show .col-2 .head select{
+        width: 44%;
+    }
+    
+}
 @media(max-width:950px) {
     section:nth-child(2){
         padding: 0;
     }
+    .arrivals .arr-row.row{
+    grid-template-columns: 1fr 1fr;
+    }
     
 }
 @media(max-width:775px) {
+    .arrivals .arr-row.row{
+        gap: 35px;
+    }
     .arr-row .arr-col{
-        width: 33%;
+        width: 100%;
+    }
+    .arrivals.show .col-2 .head select{
+        width: 60%;
     }
     
 }
@@ -584,7 +604,11 @@ section{
     .arr-row .arr-col{
         width: 80%;
     }
-    
+    .arrivals .arr-row.row{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin-left: 30px;
+        }
 }
 .arrivals.show .col-2 .head{
     display: flex;
@@ -619,3 +643,24 @@ section{
 #loginbtn{
     cursor: pointer;
 }
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+  }
+
+  .pagination button {
+    background-color: #d30d0d; /* Use your main color */
+    color: white;
+    border: 1px solid #d30d0d; /* Use your main color for the border */
+    padding: 8px 16px;
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .pagination button:hover {
+    background-color: #b90c0c; /* Darken the color on hover */
+  }

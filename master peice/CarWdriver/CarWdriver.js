@@ -5,15 +5,27 @@ menu.onclick=()=>{
         nav1.classList.toggle('activ');
 }
 let url = 'http://127.0.0.1:8000/api/cars?withDriver=1';
+let currentPage = 1;
+const itemsPerPage = 9;
 
 function mainFetch() {
   let shop = document.getElementById('shop');
+  let pagination = document.getElementById('pagination');
+
+  // Clear both shop and pagination content
   shop.innerHTML = '';
+  pagination.innerHTML = '';
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      data.forEach(car => {
+      const totalPages = Math.ceil(data.length / itemsPerPage);
+
+      // Calculate the start and end index for the current page
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
+      data.slice(startIndex, endIndex).forEach(car => {
         // Fetch the average rating for the current car
         fetch(`http://127.0.0.1:8000/api/Avg/${car.id}`)
           .then(response => response.json())
@@ -22,34 +34,41 @@ function mainFetch() {
 
             // Append the car details and average rating to the shop container
             shop.innerHTML += `
-                                <div class="arr-col">
-                                    <div class="img">
-                                        <img src="http://127.0.0.1:8000/car/img/${car.img}" alt="">
-                                    </div>
-                                    <h5>${car.brand}</h5>
-                                    <div class="rating">
-                                        <div class="stars">
-                                            ${getStarIcons(averageRating)}
-                                        </div>
-                                        <div class="review">
-                                            <span>${car.name}</span>
-                                        </div>
-                                    </div>
-                                    <div class="features">
-                                        <span><i class="fa-solid fa-circle-exclamation"></i>${car.gear}</span>
-                                        <span><i class="fa-solid fa-location-dot"></i>${car.location}</span>
-                                        <span><i class="fa-solid fa-location-crosshairs"></i>${car.fuel_type}</span>
-                                        <span><i class="fa-solid fa-car"></i>With Driver</span>
-                                    </div>
-                                    <div class="price">
-                                        <p>${car.price_day}JD/Day</p>
-                                        <a href="../SingleCar/SingleCar.html#${car.id}"><button>Rent Now</button></a>
-                                    </div>
-                                </div>
-                            `;
+              <div class="arr-col">
+                <div class="img">
+                  <img src="http://127.0.0.1:8000/car/img/${car.img}" alt="">
+                </div>
+                <h5>${car.brand}</h5>
+                <div class="rating">
+                  <div class="stars">
+                    ${getStarIcons(averageRating)}
+                  </div>
+                  <div class="review">
+                    <span>${car.name}</span>
+                  </div>
+                </div>
+                <div class="features">
+                  <span><i class="fa-solid fa-circle-exclamation"></i>${car.gear}</span>
+                  <span><i class="fa-solid fa-location-dot"></i>${car.location}</span>
+                  <span><i class="fa-solid fa-location-crosshairs"></i>${car.fuel_type}</span>
+                  <span><i class="fa-solid fa-car"></i>With Driver</span>
+                </div>
+                <div class="price">
+                  <p>${car.price_day}JD/Day</p>
+                  <a href="/SingleCarWdriver/SingleCarWdriver.html#${car.id}"><button>Rent Now</button></a>
+                </div>
+              </div>
+            `;
           })
           .catch(error => console.error('Error fetching average rating:', error));
       });
+
+      // Add dynamic pagination controls
+      pagination.innerHTML += `
+        <div class="pagination" id="pagination">
+          ${generatePageNumbers(totalPages)}
+        </div>
+      `;
     })
     .catch(error => console.error('Error fetching cars:', error));
 }
@@ -57,7 +76,7 @@ function mainFetch() {
 // Helper function to generate star icons based on the average rating
 function getStarIcons(averageRating) {
   if (averageRating === 0) {
-      return 'New';
+    return 'New';
   }
 
   const fullStars = Math.floor(averageRating);
@@ -66,14 +85,29 @@ function getStarIcons(averageRating) {
   let starsHtml = '';
 
   for (let i = 0; i < fullStars; i++) {
-      starsHtml += '<i class="fa-solid fa-star"></i>';
+    starsHtml += '<i class="fa-solid fa-star"></i>';
   }
 
   if (halfStar === 1) {
-      starsHtml += '<i class="fa-solid fa-star-half"></i>';
+    starsHtml += '<i class="fa-solid fa-star-half"></i>';
   }
 
   return starsHtml !== '' ? starsHtml : 'New'; // Return 'New' if starsHtml is empty
+}
+
+// Function to go to a specific page
+function goToPage(pageNumber) {
+  currentPage = pageNumber;
+  mainFetch();
+}
+
+// Function to generate dynamic page numbers
+function generatePageNumbers(totalPages) {
+  let pageNumbersHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbersHTML += `<button class onclick="goToPage(${i})">${i}</button>`;
+  }
+  return pageNumbersHTML;
 }
 
 function val(){

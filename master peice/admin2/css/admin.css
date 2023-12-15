@@ -82,14 +82,19 @@ td {
 form div {
   margin-bottom: 15px;
 }
-.hover:hover img{
+.hover {
+  position: relative; /* Set the parent container to relative position */
+}
+
+.hover:hover img {
   width: 350px;
-  transition: ease 0.4s;
   height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: ease 0.4s;
+  z-index: 1;
 }
 #Logout{
   cursor: pointer;

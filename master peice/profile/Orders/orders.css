@@ -407,7 +407,7 @@ li:hover,
   .card-img {
     display: block;
     width: 100%;
-    height: 30vh;
+    height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }

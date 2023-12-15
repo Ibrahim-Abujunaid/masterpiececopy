@@ -430,6 +430,7 @@ h6 {
     color: #465b52;
 }
 
+
 .section-p1 {
     padding: 40px 80px;
 }
@@ -500,9 +501,9 @@ h6 {
     padding-top: 7%;
     background-color: #fffafa;
 }
-
 .testimonial-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #fff;
     padding: 20px;
@@ -512,7 +513,7 @@ h6 {
 
 .testimonial {
     width: 25%;
-
+    
     margin: 0 10px;
 }
 
@@ -527,23 +528,39 @@ h6 {
 .testimonial p {
     color: #555;
     font-size: 13px;
-    text-align: justify;
+    text-align: start;
 }
 
 .testimonial h3 {
     color: #333;
     margin: 0;
 }
+@media (max-width:625px) {
+    .testimonial-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
 
 #about-head {
     display: flex;
     align-items: center;
+    
 }
 
 #about-head img {
     width: 100%;
     margin-top: 50px;
     height: 40vh;
+}
+@media (max-width:885px) {
+    #about-head{
+        flex-wrap: wrap;
+    }
+    #about-head img{
+        width: 70%;
+    }
 }
 
 #about-head div {
@@ -553,7 +570,15 @@ h6 {
 #about1 {
     display: flex;
     gap: 20px;
+    
+}
 
+@media(max-width:1050px) {
+    #about1{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 #about1 div {
@@ -565,6 +590,8 @@ h6 {
 }
 #about1 div:nth-child(2) img{
     padding-top: 10%;
+    width: 90%;
+    
 }
 
 #about1 div:nth-child(1) p {
@@ -574,4 +601,20 @@ h6 {
 }
 #loginbtn{
     cursor: pointer;
+}
+@media (max-width:531px) {
+    #shop{
+        height: auto;
+    }
+}
+@media (max-width:700px) {
+    #about1 div:nth-child(1) p{
+      font-size: 13px;
+    }
+    .why{
+      font-size: 13px;
+    }
+    .section-p1{
+        padding: 15px 30px;
+    }
 }

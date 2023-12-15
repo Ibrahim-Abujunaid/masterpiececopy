@@ -348,13 +348,14 @@ li:hover,
 
 @media(max-width:600px) {
     .footer .footer-row {
-        text-align: center;
+        text-align: justify;
         grid-template-columns: 1fr;
     }
 }
 /* Style for the single car rental section */
 #car_info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
@@ -366,13 +367,18 @@ li:hover,
 }
 
 .singleimg img {
-    height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 660px;
+    max-height: 55vh;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.5s ease;
+}
+@media(max-width:717px) {
+    .singleimg img{
+        width: 100%;
+    }
 }
 
 .singleimg img:hover {

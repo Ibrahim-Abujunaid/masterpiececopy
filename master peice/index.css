@@ -160,9 +160,7 @@ li:hover,
         display: flex;
         cursor: pointer;
     }
-
 }
-
 @media(max-width:400px) {
     .logo img {
         width: 120px;
@@ -177,6 +175,11 @@ li:hover,
     align-items: center;
     justify-content: center;
     padding: 0 5rem;
+}
+@media(max-width:600px) {
+    .home .slide{
+        padding: 1rem 1rem ;
+    }
 }
 .home .swiper-wrapper .slide-one{
     background:
@@ -440,6 +443,11 @@ section{
         padding: 0 0;
     }
 }
+@media(max-width:960px){
+    .home .swiper-wrapper .slide-one{
+        height: auto;
+    }
+}
 @media(max-width:900px){
     .find .find-row{
         grid-template-columns: 1fr 1fr;
@@ -450,8 +458,9 @@ section{
     section{
         padding: 2rem 1rem;
     }
+    
 }
-@media(max-width:470px){
+@media(max-width:491px){
     .find .find-row{
         text-align: center;
         grid-template-columns: 1fr;
@@ -464,6 +473,11 @@ section{
     }
     .market .col-4{
         text-align: center;
+    }
+    .home .swiper-wrapper .slide .col-1 .buttons{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 /* counter section */
@@ -636,23 +650,46 @@ section{
     background-color: #141622;
     transition: 0.5s;
 }
+@media(max-width:1195px) {
+    .arr-row .arr-col{
+        width: 25%;
+    }
+}
+@media(max-width:1068px) {
+    .arr-row .arr-col{
+        width: 30%;
+    }
+}
 @media(max-width:950px) {
     section:nth-child(2){
         padding: 0;
+    }
+    .arr-row .arr-col{
+        width: 30%;
     }
     
 }
 @media(max-width:775px) {
     .arr-row .arr-col{
-        width: 33%;
+        width: 35%;
     }
     
 }
+@media(max-width:590px) {
+    .arr-row .arr-col{
+        width: 40%;
+    }
+}
 @media(max-width:560px) {
     .arr-row .arr-col{
-        width: 80%;
+        width: 65%;
     }
     
+}
+@media(max-width:450px) {
+    .arr-row .arr-col{
+        width: 75%;
+    }
 }
 /* footer */
 .footer{
@@ -806,7 +843,7 @@ section{
 }
 @media(max-width:600px) {
     .footer .footer-row{
-        text-align: center;
+        text-align: justify;
         grid-template-columns: 1fr;
     }
     

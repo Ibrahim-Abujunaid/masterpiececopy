@@ -79,8 +79,9 @@ function initializeFlatpickr(bookedDates) {
 document.getElementById('submit').addEventListener('click', (e) => {
     e.preventDefault();
     const isLoggedin = sessionStorage.getItem('isLoggedin');
-        if (!isLoggedin) {
-                alert('Please log in to confirm the booking.');
+    const rolee=sessionStorage.getItem('roleId')
+        if (!isLoggedin||rolee=='2') {
+                alert('Please log in as a User to confirm the booking.');
                 return;
         }
 

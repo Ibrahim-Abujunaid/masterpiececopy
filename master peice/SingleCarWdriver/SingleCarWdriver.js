@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 .then(response => response.json())
                                 .then(driver => {
                                         console.log(driver)
-
+                                       //
 
                                         document.getElementById('driver').innerHTML =
                                                 `
                                          <div class="driver">
                                          <div class="img1">
-                                             <img src="http://127.0.0.1:8000/car/img/${driver[0].img}" alt="">
+                                             <img src="http://127.0.0.1:8000/driver/img/${driver[0].img}" alt="">
                                          </div>
                                          <div class="info_driver">
                                              <span>Driver name : ${driver[0].name}</span>
@@ -100,8 +100,9 @@ function initializeFlatpickr(bookedDates) {
 document.getElementById('submit').addEventListener('click', (e) => {
         e.preventDefault();
         const isLoggedin = sessionStorage.getItem('isLoggedin');
-        if (!isLoggedin) {
-                alert('Please log in to confirm the booking.');
+        const rolee=sessionStorage.getItem('roleId')
+        if (!isLoggedin||rolee=='2') {
+                alert('Please log in as a User to confirm the booking.');
                 return;
         }
 

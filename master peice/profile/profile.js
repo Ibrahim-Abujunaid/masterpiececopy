@@ -2,7 +2,7 @@
 function orders(){
 let order = document.getElementById('order');
 let role = sessionStorage.getItem('roleId')
-if (role == 3) {
+if (role == 3||role==1) {
         order.addEventListener('click', (e) => {
                 window.location.href = 'Orders/orders.html';
         });
@@ -10,8 +10,6 @@ if (role == 3) {
         order.addEventListener('click', (e) => {
                 window.location.href = 'OrdersRenter/OrdersRenter.html';
         }); 
-}else{
-  order.style.display='none';
 }
 }
 // nav bar toggle

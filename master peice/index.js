@@ -228,11 +228,11 @@ function populateCarContainer1(cars) {
                         <span><i class="fa-solid fa-location-dot"></i>${car.location}</span>
                         <span><i class="fa-solid fa-gear"></i>${car.gear}</span>
                         <span><i class="fa-solid fa-bolt"></i>${car.fuel_type}</span>
-                        <span><i class="fa-solid fa-car"></i>Car</span>
+                        <span><i class="fa-solid fa-car"></i>With driver</span>
                     </div>
                     <div class="price">
                         <p>${car.price_day}JD/Day</p>
-                        <a href='/SingleCar/SingleCar.html#${car.id}'><button>Rent Now</button></a>
+                        <a href='/SingleCarWdriver/SingleCarWdriver.html#${car.id}'><button>Rent Now</button></a>
                     </div>
                 `;
 
