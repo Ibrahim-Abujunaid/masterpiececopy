@@ -12,12 +12,12 @@ if (isLoggedIn == 'true' && Role == 1) {
   });
   loginButtonNav.textContent = 'Logout';
   loginButtonNav.addEventListener('click', (e) => {
-    window.location.href = '/index.html';
     sessionStorage.clear();
+    window.location.reload();
   });
   Dashboard.textContent='Dashboard';
   Dashboard.addEventListener('click',()=>{
-    window.location.href="/admin2/admin/product/index.html";
+    window.location.href="admin2/admin/product/index.html";
   })
   
 } else if (isLoggedIn === 'true' && Role == 2) {
