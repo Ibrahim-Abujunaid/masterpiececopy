@@ -434,3 +434,6 @@ li:hover,
  #loginbtn{
     cursor: pointer;
 }
+#err{
+    color: #d30d0d;
+}

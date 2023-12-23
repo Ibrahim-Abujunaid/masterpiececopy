@@ -99,7 +99,7 @@ form div {
 #Logout{
   cursor: pointer;
 }
-#myChart{
+#myChart,#myChart1{
   margin: 4% auto;
 }
 
@@ -119,4 +119,41 @@ form div {
 #search:focus {
   border-color: #d30d0d;
   outline: none;
+}
+.counter{
+  width: 100%;
+  min-height:10vh ;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 0.4rem;
+  background-image: url(./img/icons/bg-counter.jpg);
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+.counter .container{
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.counter .container img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d30d0d;
+  padding: 0.3rem;
+}
+.counter .container span.num{
+  padding: 1rem 1rem;
+  font-size: 4.2rem;
+  font-weight: 500;
+}
+.counter .container span.text{
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.counter .container span.text i{
+  padding-right: 0.5rem;
 }

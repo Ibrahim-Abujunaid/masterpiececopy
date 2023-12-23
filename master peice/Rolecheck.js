@@ -12,12 +12,12 @@ if (isLoggedIn == 'true' && Role == 1) {
   });
   loginButtonNav.textContent = 'Logout';
   loginButtonNav.addEventListener('click', (e) => {
+    window.location.href = '/index.html';
     sessionStorage.clear();
-    window.location.reload();
   });
   Dashboard.textContent='Dashboard';
   Dashboard.addEventListener('click',()=>{
-    window.location.href="admin2/admin/product/index.html";
+    window.location.href="/admin2/admin/product/index.html";
   })
   
 } else if (isLoggedIn === 'true' && Role == 2) {
@@ -65,3 +65,45 @@ if (isLoggedIn == 'true' && Role == 1) {
     window.location.href = "/login/login.html"
   });
 }
+
+
+
+
+
+
+document.getElementById('subscribeBtn').addEventListener('click', () => {
+  const emailInput = document.getElementById('subscribe').value;
+  const errorElement = document.getElementById('err');
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailInput)) {
+    errorElement.textContent = 'Invalid email address';
+    return;
+  }
+
+  // Clear previous error messages
+  errorElement.textContent = '';
+
+  // Make the fetch request
+  fetch('http://127.0.0.1:8000/api/supscribe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json,/',
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+    body: JSON.stringify({ email: emailInput }),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle the response as needed
+    console.log('Subscription response:', data);
+  })
+  .catch(error => console.error('Error subscribing:', error));
+});
+
+
+
+
+

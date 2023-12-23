@@ -439,7 +439,7 @@ section{
 @media(max-width:1353px){
     .search .find{
         max-width:85%;
-        left: 4%;
+        left: 20px;
 
     }
     .search{
@@ -895,4 +895,7 @@ section{
 }
 #loginbtn{
     cursor: pointer;
+}
+#err{
+    color: #d30d0d;
 }

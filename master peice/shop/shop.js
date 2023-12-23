@@ -39,7 +39,7 @@ function mainFetch() {
                 <div class="img">
                   <img src="http://127.0.0.1:8000/car/img/${car.img}" alt="">
                 </div>
-                <h5>${car.brand}</h5>
+                <h5>${car.brand} ${car.model ? ` ${car.model}` : ''}</h5>
                 <div class="rating">
                   <div class="stars">
                     ${getStarIcons(averageRating)}
@@ -49,10 +49,10 @@ function mainFetch() {
                   </div>
                 </div>
                 <div class="features">
-                  <span><i class="fa-solid fa-circle-exclamation"></i>${car.gear}</span>
-                  <span><i class="fa-solid fa-location-dot"></i>${car.location}</span>
-                  <span><i class="fa-solid fa-location-crosshairs"></i>${car.fuel_type}</span>
-                  <span><i class="fa-solid fa-car"></i>Car</span>
+                <span><i class="fa-solid fa-location-dot"></i>${car.location}</span>
+                <span><i class="fa-solid fa-gear"></i>${car.gear}</span>
+                <span><i class="fa-solid fa-bolt"></i>${car.fuel_type}</span>
+                <span><i class="fa-solid fa-car"></i>Car</span>
                 </div>
                 <div class="price">
                   <p>${car.price_day}JD/Day</p>

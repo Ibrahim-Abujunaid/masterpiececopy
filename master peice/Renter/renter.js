@@ -166,8 +166,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData();
             formData.append("img", document.getElementById("carImage").files[0]);
             formData.append("car_license", document.getElementById("CarLicense").files[0]);
-            formData.append("price_day", document.getElementById("cost").value);
+            formData.append("price_day", document.getElementById("cost").value<1?alert("invalid cost"):document.getElementById("cost").value);
             formData.append("withDriver", document.getElementById("driver").value);
+            formData.append("model", document.getElementById("model").value);
             formData.append("availability", 1);
             formData.append("status", "pending");
             formData.append("brand_id", document.getElementById("brands").value);

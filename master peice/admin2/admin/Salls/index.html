@@ -23,15 +23,16 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/admin.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-        <title>Admin Section - Manage Topics</title>
+        <title>Admin Section - Charts</title>
+        <link rel="icon" href="../../../img/logo/favicon (3).ico">
     </head>
 
     <body>
         <header>
             <div class="logo">
-                <a href="../../../index.html">
-                <h1 class="logo-text"><span>Lynx</span>Rides</h1></a>
+               <a href="/index.html"> <h1 class="logo-text"><span>Lynx</span>Rides</h1></a>
             </div>
             <i class="fa fa-bars menu-toggle"></i>
             <ul class="nav">
@@ -42,12 +43,11 @@
                         <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
                     </a>
                     <ul>
-                        <li id="Logout"><a href="#" class="logout">Logout</a></li>
+                        <li><a id="Logout" class="logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </header>
-
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">
 
@@ -57,7 +57,7 @@
                     <li><a href="../product/index.html">Manage Orders </a></li>
                     <li><a href="../users/index.html">Manage Users</a></li>
                     <li><a href="../categorey/index.html">Manage Category</a></li>
-                    <li><a href="../Salls/index.html">Manage Salls </a></li>
+                    <li><a href="../Salls/index.html">Manage Sales </a></li>
 
 
                 </ul>
@@ -67,7 +67,8 @@
 
             <!-- Admin Content -->
             <div class="admin-content">
-                <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+                <div class="counter" id="counterContainer"></div>
+                <canvas id="myChart1" style="width:100%;max-width:900px"></canvas>
             </div>
             <!-- // Admin Content -->
 

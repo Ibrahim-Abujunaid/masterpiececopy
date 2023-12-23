@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Car</title>
+    <link rel="icon" href="../img/logo/favicon (3).ico">
     <link rel="stylesheet" href="SingleCar.css">
     <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,21 +17,21 @@
     <!-- nav bar-section -->
     <header class="header">
         <div class="logo">
-            <a href="../index.html"><img src="../img/logo/lynx22-removebg-preview.png" alt=""></a>
+            <a href="/index.html"><img src="/img/logo/lynx22-removebg-preview.png" alt=""></a>
         </div>
         <nav>
             <ul id="nav1">
-                <li><a href="../index.html">Home</a></li>
-                <li class="active"><a href="../shop/shop.html">Book Now</a>
+                <li><a href="/index.html">Home</a></li>
+                <li class="active"><a href="/shop/shop.html">Book Now</a>
                     <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
                     <ul class="drop-down">
-                        <span><a href="../CarWdriver/CarWdriver.html">Car with Driver</a></span>
+                        <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
                     </ul>
                 </li>
-                <li><a href="../About us/Aboutus.html">About us</a></li>
-                <li id="contact"><a href="../Contact Us/Contactus.html">Contact us</a></li>
-                <li id="addBtn"><a href="../signUp/signUp.html">Sign Up</a></li>
-                <li id="loginbtn"><a href="../login/login.html">Login</a></li>
+                <li><a href="/About us/Aboutus.html">About us</a></li>
+                <li id="contact"><a href="/Contact Us/Contactus.html">Contact us</a></li>
+                <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+                <li id="loginbtn"><a href="/login/login.html">Login</a></li>
             </ul>
 
         </nav>
@@ -49,7 +50,7 @@
                 <input type="date" placeholder="Enter RentalDate" id="rentalDate">
             </div>
             <div>
-                <a href="../profile/Orders/orders.html"></a>
+                <a href="/profile/Orders/orders.html"></a>
                 <label for="returnDate">Return Date</label>
                 <input type="date" placeholder="Enter ReturnDate" id="returnDate">
             </div>
@@ -92,7 +93,7 @@
     <section class="footer">
         <div class="footer-row">
             <div class="footer-col">
-                <a href="../index.html"><img src="../img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt=""></a>
+                <a href="/index.html"><img src="/img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt=""></a>
                 <p class="text">Seamless rentals, your way. Rent a car or elevate your experience with a chauffeur –
                     enjoy the journey, stress-free.</p>
                 <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
@@ -119,9 +120,10 @@
             </div>
             <div class="footer-col">
                 <h5>Newsletter</h5>
-                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
-                <input type="text" placeholder="your Email">
-                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+                <p class="text">Stay ahead of the curve! ️ Subscribe and we'll keep you updated on the latest car trends.</p>                
+                <div id="err"></div>
+                <input type="text" id="subscribe" placeholder="your Email">
+                <button id="subscribeBtn">Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
     </section>
@@ -134,7 +136,7 @@
             <i class="fa-brands fa-youtube"></i>
         </div>
     </div>
-    <script src="../Rolecheck.js"></script>
+    <script src="/Rolecheck.js"></script>
     <script src="SingleCar.js"></script>
 </body>
 

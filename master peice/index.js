@@ -136,7 +136,7 @@ function populateCarContainer(cars) {
                     <div class="img">
                         <img src="http://127.0.0.1:8000/car/img/${car.img}" alt="${car.brand} Car">
                     </div>
-                    <h5>${car.brand} Car</h5>
+                    <h5>${car.brand} ${car.model ? ` ${car.model}` : ''}</h5>
                     <div class="rating">
                         <div class="stars">
                             ${getStarIcons(averageRating)}
@@ -215,7 +215,7 @@ function populateCarContainer1(cars) {
                     <div class="img">
                         <img src="http://127.0.0.1:8000/car/img/${car.img}" alt="${car.brand} Car">
                     </div>
-                    <h5>${car.brand} Car</h5>
+                    <h5>${car.brand} ${car.model ? ` ${car.model}` : ''}</h5>
                     <div class="rating">
                         <div class="stars">
                             ${getStarIcons1(averageRating)}

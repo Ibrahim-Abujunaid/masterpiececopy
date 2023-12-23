@@ -26,11 +26,11 @@ function populateCarDetails(car) {
     document.getElementById('carName').textContent = car.brand;
     document.getElementById('carDetails').innerHTML = `
             <div>
-                <span><i class="fa-solid fa-circle-exclamation"></i>Transmission</span>
+                <span><i class="fa-solid fa-gear"></i>Transmission</span>
                 <span>${car.gear}</span>
             </div>
             <div>
-                <span><i class="fa-solid fa-location-crosshairs"></i>Fuel type</span>
+                <span><i class="fa-solid fa-bolt"></i>Fuel type</span>
                 <span>${car.fuel_type}</span>
             </div>
             <div>

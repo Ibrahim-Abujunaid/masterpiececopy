@@ -107,7 +107,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding     : 0.85rem 1.5rem;
     border-color: rgba(24, 28, 33, 0.03) !important;
 }
-section{
+.flex-grow-1{
     margin-bottom: 20px;
 }
 * {
@@ -460,10 +460,29 @@ li:hover,
 
 @media(max-width:600px) {
     .footer .footer-row {
-        text-align: center;
+        text-align: justify;
         grid-template-columns: 1fr;
     }
 }
 #loginbtn{
     cursor: pointer;
+}
+#userImage{
+width: 160px;
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+#userImage:hover{
+transform: scale(1.05);
+}
+#Validerror{
+
+    color: #d30d0d;
+}
+#err{
+    color: #d30d0d;
 }

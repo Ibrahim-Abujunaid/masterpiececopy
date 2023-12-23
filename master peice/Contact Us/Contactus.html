@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Contact Us</title>
+  <link rel="icon" href="../img/logo/favicon (3).ico">
   <link rel="stylesheet" href="Contactus.css">
   <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
 </head>
@@ -17,17 +18,17 @@
     </div>
     <nav>
       <ul id="nav1">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../shop/shop.html">Book Now</a>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/shop/shop.html">Book Now</a>
           <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
           <ul class="drop-down">
-            <span><a href="../CarWdriver/CarWdriver.html">Car with Driver</a></span>
+            <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
           </ul>
         </li>
-        <li><a href="../About us/Aboutus.html">About us</a></li>
-        <li class="active" id="contact"><a href="../Contact Us/Contactus.html">Contact us</a></li>
-        <li id="addBtn"><a href="../signUp/signUp.html">Sign Up</a></li>
-        <li id="loginbtn"><a href="../login/login.html">Login</a></li>
+        <li><a href="/About us/Aboutus.html">About us</a></li>
+        <li class="active" id="contact"><a href="/Contact Us/Contactus.html">Contact us</a></li>
+        <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+        <li id="loginbtn"><a href="/login/login.html">Login</a></li>
       </ul>
 
     </nav>
@@ -95,25 +96,19 @@
           </div>
 
           <div class="contact-form">
-            <form action="" id="contact-form">
+            <form action="mailto:Ibrahimabujunaid@gmail.com" id="contact-form" method="post" enctype="text/plain">
               <h2>Send Message</h2>
               <div class="input-box">
-                <input type="text" required="true" name="">
+                <input type="text" required="true" name="name" >
                 <span>Full Name</span>
               </div>
-
               <div class="input-box">
-                <input type="email" required="true" name="">
-                <span>Email</span>
-              </div>
-
-              <div class="input-box">
-                <textarea required="true" name=""></textarea>
+                <textarea required="true" name="comment"></textarea>
                 <span>Type your Message...</span>
               </div>
 
               <div class="input-box">
-                <input type="submit" value="Send" name="">
+                <input type="submit" value="Send">
               </div>
             </form>
           </div>
@@ -129,7 +124,7 @@
   <section class="footer">
     <div class="footer-row">
       <div class="footer-col">
-        <img src="../img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt="">
+        <img src="/img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt="">
         <p class="text">Seamless rentals, your way. Rent a car or elevate your experience with a chauffeur – enjoy the
           journey, stress-free.</p>
         <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
@@ -156,9 +151,10 @@
       </div>
       <div class="footer-col">
         <h5>Newsletter</h5>
-        <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
-        <input type="text" placeholder="your Email">
-        <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+        <p class="text">Stay ahead of the curve! ️ Subscribe and we'll keep you updated on the latest car trends.</p>  
+        <div id="err"></div>
+        <input type="text" id="subscribe" placeholder="your Email">
+        <button id="subscribeBtn">Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
       </div>
     </div>
   </section>
@@ -172,7 +168,7 @@
     </div>
   </div>
   <script src="contact.js"></script>
-  <script src="../Rolecheck.js"></script>
+  <script src="/Rolecheck.js"></script>
 </body>
 
 </html>

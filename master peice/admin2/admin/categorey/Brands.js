@@ -1,3 +1,17 @@
+const isLoggedIn = sessionStorage.getItem('isLoggedin');
+let Logout = document.getElementById('Logout');
+let Role =sessionStorage.getItem("roleId")
+if (isLoggedIn === 'true' && Role == 1) {
+  // Change text and behavior for logged-in users
+  Logout.textContent = 'Log out';
+
+  Logout.addEventListener('click', (e) => {
+      window.location.href = '/index.html';
+      sessionStorage.clear();
+  });
+} else {
+    window.location.href = '/login/login.html';
+}
 let brandCounter = 0;
 
 // Fetch data from the API
@@ -87,18 +101,3 @@ document.getElementById('brandForm').addEventListener('submit', function (event)
         })
 });
 
-const isLoggedIn = sessionStorage.getItem('isLoggedin');
-let Logout = document.getElementById('Logout');
-let Role =sessionStorage.getItem("roleId")
-if (isLoggedIn === 'true' && Role == 1) {
-  // Change text and behavior for logged-in users
-  Logout.textContent = 'Log out';
-
-  Logout.addEventListener('click', (e) => {
-      // Log out logic
-      window.location.href = '/index.html';
-      sessionStorage.clear();
-  });
-} else {
-    window.location.href = '/login/login.html';
-}

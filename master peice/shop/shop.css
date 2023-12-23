@@ -667,3 +667,6 @@ section{
   .pagination button:hover {
     background-color: #b90c0c; /* Darken the color on hover */
   }
+  #err{
+    color: #d30d0d;
+}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lynx Rides</title>
+    <link rel="icon" href="img/logo/favicon (3).ico">
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/62ed9ebe37.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -14,23 +15,23 @@
     <!-- nav bar-section -->
     <header class="header">
         <div class="logo">
-           <a href="./index.html"><img src="./img/logo/lynx22-removebg-preview.png" alt=""></a>
+           <a href="/index.html"><img src="./img/logo/lynx22-removebg-preview.png" alt=""></a>
         </div>
         <nav>
             <ul id="nav1">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="shop/shop.html">Book Now</a>
+                <li><a href="/shop/shop.html">Book Now</a>
                     <i class="fa-solid fa-chevron-down" style="color: #000000; font-size: 0.7rem;"></i>
                     <ul class="drop-down">
-                        <span><a href="CarWdriver/CarWdriver.html">Car with Driver</a></span>
+                        <span><a href="/CarWdriver/CarWdriver.html">Car with Driver</a></span>
                     </ul>
                 </li>
-                <li><a href="About us/Aboutus.html">About us</a></li>
-                <li id="contact"><a href="Contact Us/Contactus.html">Contact us</a></li>
-                <li id="addBtn"><a href="signUp/signUp.html">Sign Up</a></li>
-                <li id="loginbtn"><a href="login/login.html">Login</a></li>
+                <li><a href="/About us/Aboutus.html">About us</a></li>
+                <li id="contact"><a href="/Contact Us/Contactus.html">Contact us</a></li>
+                <li id="addBtn"><a href="/signUp/signUp.html">Sign Up</a></li>
+                <li id="loginbtn"><a href="/login/login.html">Login</a></li>
             </ul>
-            <a href="Renter/renter.html"></a>
+            <a href="/Renter/renter.html"></a>
         </nav>
         <i class="fa-solid fa-bars" id="menu" style="color: #000000;"></i>
     </header>
@@ -45,9 +46,9 @@
                         <p>Seamless rentals, your way. Rent a car or elevate your experience with a chauffeur – enjoy
                             the journey, stress-free.</p>
                         <div class="buttons">
-                            <a href="shop/shop.html"><button type="submit" class="AboutUs"><i
+                            <a href="/shop/shop.html"><button type="submit" class="AboutUs"><i
                                         class="fa-solid fa-arrow-right"></i>Rent a Car!</button></a>
-                            <a href="CarWdriver/CarWdriver.html"><button type="submit" class="Shop"><i
+                            <a href="/CarWdriver/CarWdriver.html"><button type="submit" class="Shop"><i
                                         class="fa-solid fa-arrow-right"></i>With Driver
                                 </button></a>
                         </div>
@@ -130,7 +131,7 @@
             <p class="p1"><i class="fa-solid fa-forward-step"></i>Rent a car for self-driven freedom.</p>
             <p class="p1"><i class="fa-solid fa-forward-step"></i>Indulge in chauffeur-driven luxury.</p>
             <p class="p1"><i class="fa-solid fa-forward-step"></i>Sign up and start Earn Money!.</p>
-            <a href="signUp/signUp.html"><button>Earn money! <i
+            <a href="/signUp/signUp.html"><button>Earn money! <i
                         class="fa-solid fa-arrow-right"></i></button></a>
         </div>
     </section>
@@ -181,9 +182,10 @@
             </div>
             <div class="footer-col">
                 <h5>Newsletter</h5>
-                <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
-                <input type="text" placeholder="your Email">
-                <button>Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
+                <p class="text">Stay ahead of the curve! ️ Subscribe and we'll keep you updated on the latest car trends.</p>
+                <div id="err"></div>
+                <input type="text" id="subscribe" placeholder="your Email">
+                <button id="subscribeBtn">Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
     </section>
@@ -200,6 +202,5 @@
     <script src="Rolecheck.js"></script>
     <script src="index.js"></script>
 </body>
-
 
 </html>

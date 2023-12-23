@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 .then(response => response.json())
                                 .then(driver => {
                                         console.log(driver)
-                                       //
+                                        //
 
                                         document.getElementById('driver').innerHTML =
                                                 `
@@ -46,22 +46,22 @@ function populateCarDetails(car) {
         document.getElementById('carImage').src = `http://127.0.0.1:8000/car/img/${car.img}`;
         document.getElementById('carName').textContent = car.brand;
         document.getElementById('carDetails').innerHTML = `
-            <div>
-                <span><i class="fa-solid fa-circle-exclamation"></i>Transmission</span>
-                <span>${car.gear}</span>
-            </div>
-            <div>
-                <span><i class="fa-solid fa-location-crosshairs"></i>Fuel type</span>
-                <span>${car.fuel_type}</span>
-            </div>
-            <div>
-                <span><i class="fa-solid fa-location-dot"></i>Location</span>
-                <span>${car.location}</span>
-            </div>
-            <div>
-                <span><i class="fa-solid fa-greater-than"></i>Renter</span>
-                <span>${car.name}</span>
-            </div>
+        <div>
+        <span><i class="fa-solid fa-gear"></i>Transmission</span>
+        <span>${car.gear}</span>
+    </div>
+    <div>
+        <span><i class="fa-solid fa-bolt"></i>Fuel type</span>
+        <span>${car.fuel_type}</span>
+    </div>
+    <div>
+        <span><i class="fa-solid fa-location-dot"></i>Location</span>
+        <span>${car.location}</span>
+    </div>
+    <div>
+        <span><i class="fa-solid fa-greater-than"></i>Renter</span>
+        <span>${car.name}</span>
+    </div>
         `;
         document.getElementById('pricePerDay').textContent = car.price_day.toFixed(2);
 }
@@ -100,8 +100,8 @@ function initializeFlatpickr(bookedDates) {
 document.getElementById('submit').addEventListener('click', (e) => {
         e.preventDefault();
         const isLoggedin = sessionStorage.getItem('isLoggedin');
-        const rolee=sessionStorage.getItem('roleId')
-        if (!isLoggedin||rolee=='2') {
+        const rolee = sessionStorage.getItem('roleId')
+        if (!isLoggedin || rolee == '2') {
                 alert('Please log in as a User to confirm the booking.');
                 return;
         }
@@ -138,7 +138,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
                         .then(data => {
                                 // Handle the response from the server as needed
                                 alert("Booking pending wait landloard Accept", start, end);
-                                window.location.href="/profile/Orders/orders.html";
+                                window.location.href = "/profile/Orders/orders.html";
                                 // window.location.reload();
                                 console.log('Booking successful:', data);
                                 // You may want to redirect or show a success message
