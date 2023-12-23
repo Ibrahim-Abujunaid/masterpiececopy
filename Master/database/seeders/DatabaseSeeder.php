@@ -20,8 +20,7 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             LocationSeeder::class,
         ]);
-        \App\Models\User::factory(10)->create();
-
+        
         \App\Models\User::factory()->create([
             'name' => 'Test Admin',
             'email' => 'admin@example.com',
@@ -29,5 +28,6 @@ class DatabaseSeeder extends Seeder
             'phone'=> '0777777777',
             'role_id'=> 1,
         ]);
+        \App\Models\User::factory(50)->create();
     }
 }

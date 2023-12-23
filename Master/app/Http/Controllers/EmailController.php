@@ -14,7 +14,8 @@ class EmailController extends Controller
      */
     public function index()
     {
-        //
+        $emails=Email::all();
+        return response()->json($emails);
     }
 
     /**
@@ -35,7 +36,10 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
-        $email = Email::create($request->all());
+        $data=$request->validate([ 
+            'email' => 'required|string|unique:emails,email',
+            ]);
+        Email::create(['email'=>$data['email']]);
         return response()->json('done');
     }
 

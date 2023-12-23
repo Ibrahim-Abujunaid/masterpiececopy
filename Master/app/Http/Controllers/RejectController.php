@@ -65,9 +65,10 @@ class RejectController extends Controller
         ->join('locations','locations.id','=','cars.location_id')
         ->select('rejects.id','users.name as landlord','users.phone','rejects.start','rejects.end',
         'cars.gear', 'cars.fuel_type','locations.name as location','cars.img','brands.name as brand',
-        DB::raw('CASE WHEN withDriver = 1 THEN "yes" ELSE "no" END as withDriver')
-        ,DB::raw('CASE WHEN rejects.end > NOW() THEN "Rejected" ELSE "--" END as status'),)
-        ->orderBy("rejects.created_at","desc")->get();
+        DB::raw('CASE WHEN withDriver = 1 THEN "yes" ELSE "no" END as withDriver'),
+        DB::raw('CASE WHEN rejects.end > NOW() THEN "Rejected" ELSE "--" END as status'),)
+        ->orderBy("rejects.created_at","desc")
+        ->where('end','<',now())->get();
         return response()->json($reject);
     }
 
@@ -102,6 +103,11 @@ class RejectController extends Controller
      */
     public function destroy(Reject $reject)
     {
+        $timeThreshold = now()->addMinutes(5);
+
+        Reject::where('created_at', '>', $timeThreshold)->delete();
+    
+        Reject::where("created_at", ">", now()->addMinutes(5)->toDateTimeString())->delete();
         $reject->delete();
         return response()->json("deleted");
     }
