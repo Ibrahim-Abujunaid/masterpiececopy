@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->tinyInteger('rating');
             $table->foreignId('rent_id')->unsigned()->references('id')->on('rents')->onDelete('cascade')->unique();
-            $table->timestamps();//new comments table for all users
+            $table->timestamps();
         });
     }
 

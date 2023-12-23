@@ -20,10 +20,9 @@ return new class extends Migration
             $table->string('car_license');
             $table->string('description')->nullable();
             $table->float('price_day');
-            $table->year('model')->nullable();
+            $table->string('model')->nullable();
             $table->boolean('withDriver')->default(false);
             $table->boolean('availability')->default(true);
-            // $table->boolean('status')->default(false);//is approved by admin?
             $table->foreignId('brand_id')->unsigned()->references('id')->on('brands')->onDelete('cascade');
             $table->foreignId('owner_id')->unsigned()->references('id')->on('users')->onDelete('cascade');
             $table->enum('status', ['Reject','pending','Accept'])->default('pending');
