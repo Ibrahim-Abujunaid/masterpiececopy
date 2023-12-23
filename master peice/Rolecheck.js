@@ -8,16 +8,16 @@ const isLoggedIn = sessionStorage.getItem('isLoggedin');
 if (isLoggedIn == 'true' && Role == 1) {
   signupButtonNav.textContent = 'Profile';
   signupButtonNav.addEventListener('click', (e) => {
-    window.location.href = '/profile/profile.html';
+    window.location.href = '../profile/profile.html';
   });
   loginButtonNav.textContent = 'Logout';
   loginButtonNav.addEventListener('click', (e) => {
-    window.location.href = '/index.html';
+    window.location.href = '../index.html';
     sessionStorage.clear();
   });
   Dashboard.textContent='Dashboard';
   Dashboard.addEventListener('click',()=>{
-    window.location.href="/admin2/admin/product/index.html";
+    window.location.href="../admin2/admin/product/index.html";
   })
   
 } else if (isLoggedIn === 'true' && Role == 2) {
@@ -27,18 +27,18 @@ if (isLoggedIn == 'true' && Role == 1) {
   loginButtonNav.textContent = 'Log out';
   
   Dashboard.addEventListener('click',()=>{
-    window.location.href="/Renter/renter.html";
+    window.location.href="../Renter/renter.html";
   })
   loginButtonNav.addEventListener('click', (e) => {
     // Log out logic
-    window.location.href = '/index.html';
+    window.location.href = '../index.html';
 
     sessionStorage.clear();;
   });
 
   signupButtonNav.addEventListener('click', (e) => {
     // Log out logic
-    window.location.href = '/profile/profile.html';
+    window.location.href = '../profile/profile.html';
   });
 } else if (isLoggedIn === 'true') {
   // Change text and behavior for logged-in users
@@ -47,13 +47,13 @@ if (isLoggedIn == 'true' && Role == 1) {
 
   loginButtonNav.addEventListener('click', (e) => {
     // Log out logic
-    window.location.href = '/index.html';
+    window.location.href = '../index.html';
     sessionStorage.clear();;
   });
 
   signupButtonNav.addEventListener('click', (e) => {
     // Log out logic
-    window.location.href = '/profile/profile.html';
+    window.location.href = '../profile/profile.html';
   });
 }else{
   signupButtonNav.addEventListener('click', (e) => {
@@ -62,7 +62,7 @@ if (isLoggedIn == 'true' && Role == 1) {
   });
 
   loginButtonNav.addEventListener('click', (e) => {
-    window.location.href = "/login/login.html"
+    window.location.href = "../login/login.html"
   });
 }
 

@@ -6,11 +6,11 @@ if (isLoggedIn === 'true' && Role == 1) {
   Logout.textContent = 'Log out';
 
   Logout.addEventListener('click', (e) => {
-      window.location.href = '/index.html';
+      window.location.href = '../../../index.html';
       sessionStorage.clear();
   });
 } else {
-    window.location.href = '/login/login.html';
+    window.location.href = '../../../login/login.html';
 }
 let brandCounter = 0;
 

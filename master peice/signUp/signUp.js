@@ -107,11 +107,11 @@ function validateSignupForm() {
             switch (rolee) {
                 case "2":
                     console.log("Redirecting to Renter page");
-                    window.location.href = "/Renter/renter.html";
+                    window.location.href = "../Renter/renter.html";
                     break;
                 case "3":
                     console.log("Redirecting to index.html");
-                    window.location.href = "/index.html";
+                    window.location.href = "../index.html";
                     break;
                 default:
                     console.log("hi")
