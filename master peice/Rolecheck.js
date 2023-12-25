@@ -33,7 +33,7 @@ if (isLoggedIn == 'true' && Role == 1) {
     // Log out logic
     window.location.href = '../index.html';
 
-    sessionStorage.clear();;
+    sessionStorage.clear();
   });
 
   signupButtonNav.addEventListener('click', (e) => {

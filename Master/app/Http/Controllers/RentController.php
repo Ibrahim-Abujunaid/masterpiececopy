@@ -172,8 +172,8 @@ class RentController extends Controller
         for ($i = 0; $i < 10; $i++) {
           $currentDate = $lastTenDays->addDay(1);
           $ordersByDate[$currentDate->format('Y-m-d')] = Rent::whereDate('created_at', $currentDate)
-            ->select(DB::raw('SUM(total_price) as order_day'))
-            ->get();
+          ->select(DB::raw('COALESCE(SUM(total_price), 0) as order_day'))
+          ->get();
         }
       
         return response()->json($ordersByDate);
