@@ -67,7 +67,7 @@ class RentController extends Controller
     })->get();
     
     if ($overlappingBookings->isNotEmpty()) {
-        return response()->json( ['The selected dates are already booked. Please select different dates.']);
+        return response()->json( 'The selected dates are already booked. Please select different dates.');
     } else {
         $datetime1=new DateTime($startDate);
         $datetime2=new DateTime($endDate);
@@ -83,7 +83,7 @@ class RentController extends Controller
         $rent->user_id = $request->user_id;
         $rent->total_price = $total;
         $rent->save();
-        return response()->json($rent);
+        return response()->json("Booking pending wait landloard Accept");
     }
     }
 
