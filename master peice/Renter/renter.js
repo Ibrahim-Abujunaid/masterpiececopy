@@ -1,3 +1,12 @@
+let isLoggedIn=sessionStorage.getItem('isLoggedin');
+let Role=sessionStorage.getItem('roleId');
+console.log(Role,isLoggedIn)
+if (isLoggedIn=='true'&&Role=='2'){
+    console.log('Login succefully');
+}else{
+    window.location.href='./../login/login.html';
+}
+
 function updateCarAvailability(carId, checkbox) {
     const availability = checkbox.checked ? 1 : 0;
 
@@ -80,10 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleBlur(true); // Blur effect on form display
     });
     // Add Car Form Script
-    document.getElementById('addCar').addEventListener('click', function () {
-        document.getElementById('addCarForm').style.right = '0';
-        toggleBlur(true); // Blur effect on form display
-    });
+    // document.getElementById('addCar').addEventListener('click', function () {
+    //     document.getElementById('addCarForm').style.right = '0';
+    //     toggleBlur(true); // Blur effect on form display
+    // });
 
     document.getElementById('closeForm').addEventListener('click', function () {
         document.getElementById('addCarForm').style.right = '-400px';
@@ -163,20 +172,42 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
 
             // Create FormData object
+            const cost = document.getElementById("cost").value;
+            const driver = document.getElementById("driver").value;
+            const model = document.getElementById("model").value;
+            const brands = document.getElementById("brands").value;
+            const location = document.getElementById("location").value;
+            const transmission = document.getElementById("transmission").value;
+            const fuelType = document.getElementById("fuelType").value;
+            
+            // Validate cost
+            if (cost < 1) {
+                alert("Invalid cost");
+                return;
+            }
+            
+            // Validate other required fields
+            if (!driver || !brands || !location || !transmission || !fuelType) {
+                alert("Please fill in all required fields");
+                return;
+            }
+            
             const formData = new FormData();
             formData.append("img", document.getElementById("carImage").files[0]);
             formData.append("car_license", document.getElementById("CarLicense").files[0]);
-            formData.append("price_day", document.getElementById("cost").value<1?alert("invalid cost"):document.getElementById("cost").value);
-            formData.append("withDriver", document.getElementById("driver").value);
-            formData.append("model", document.getElementById("model").value);
+            formData.append("price_day", cost);
+            formData.append("withDriver", driver);
+            formData.append("model", model);
             formData.append("availability", 1);
             formData.append("status", "pending");
-            formData.append("brand_id", document.getElementById("brands").value);
+            formData.append("brand_id", brands);
             formData.append("owner_id", sessionStorage.getItem("userId"));
-            formData.append("location_id", document.getElementById("location").value);
-            formData.append("gear", document.getElementById("transmission").value);
-            formData.append("fuel_type", document.getElementById("fuelType").value);
-
+            formData.append("location_id", location);
+            formData.append("gear", transmission);
+            formData.append("fuel_type", fuelType);
+            
+            // Continue with your fetch or other operations
+            
             // Perform the POST request
             fetch('http://127.0.0.1:8000/api/cars', {
                 method: 'POST',
@@ -215,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => response.json())
             .then(data => {
-                window.location.reload();
+                
                 // Handle successful upload
                 console.log('Driver license uploaded successfully:', data);
             })
@@ -276,3 +307,5 @@ function populateTable(data) {
    
 })
 // ----------------------------------------- availabality -----------------------------
+
+

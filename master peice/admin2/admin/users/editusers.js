@@ -23,6 +23,23 @@ document.getElementById('updateForm').addEventListener('submit', function (event
     const updatedPhoneNum = document.getElementById('PhoneNum').value;
     const updatedEmail = document.getElementById('email').value;
 
+    // Validation for name (letters only)
+    const namePattern = /^[A-Za-z ]+$/;
+    if (!namePattern.test(updatedUsername)) {
+        document.getElementById('err').innerText = 'Invalid name. Please enter only letters.';
+        return;
+    }
+
+    // Validation for email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(updatedEmail)) {
+        document.getElementById('err').innerText = 'Invalid email address.';
+        return;
+    }
+
+    // Clear any previous error messages
+    document.getElementById('err').innerText = '';
+
     // Make API request to update user data
     fetch(`http://127.0.0.1:8000/api/users/${id}`, {
         method: 'POST',
@@ -44,8 +61,7 @@ document.getElementById('updateForm').addEventListener('submit', function (event
         window.location.href='index.html'
         // Handle success, e.g., show a success message
         console.log('User data updated:', updatedData);
-    })
-    
+    });
 });
 
 const isLoggedIn = sessionStorage.getItem('isLoggedin');
@@ -57,9 +73,9 @@ if (isLoggedIn === 'true' && Role == 1) {
 
   Logout.addEventListener('click', (e) => {
       // Log out logic
-      window.location.href = '../../../index.html';
+      window.location.href = '/index.html';
       sessionStorage.clear();
   });
 } else {
-    window.location.href = '../../../login/login.html';
+    window.location.href = '/login/login.html';
 }

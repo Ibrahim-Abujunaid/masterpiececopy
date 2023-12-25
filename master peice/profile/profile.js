@@ -130,8 +130,8 @@ document.getElementById('updateBtn').addEventListener('click', () => {
     formData.append('img', imgInput.files[0]);
   }
 
-  if (!password.trim() === "") {
-     if (old_password.trim() === "") {
+  if (!(password.trim() ==="")) {
+     if (old_password.trim() ==="") {
       error.textContent = 'old password is required';
       return;
     } else if (!password || password.length < 6 || password.length > 18) {

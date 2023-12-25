@@ -670,3 +670,9 @@ section{
   #err{
     color: #d30d0d;
 }
+.arr-col .rating .review{
+    white-space: nowrap;
+  overflow: hidden;
+  max-width: 110px; /* adjust as needed */
+
+}
