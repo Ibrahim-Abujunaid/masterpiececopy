@@ -52,8 +52,7 @@ class AuthController extends Controller
         ];
         return response()->json($res, 201);
         } else {
-            return response()->json("Your provided credentials do not match in our records.");
-           
+            return response()->json("Your provided credentials do not match in our records."); 
         }
 
     }
