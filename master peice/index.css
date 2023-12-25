@@ -439,7 +439,7 @@ section{
 @media(max-width:1353px){
     .search .find{
         max-width:85%;
-        left: 4%;
+        left: 20px;
 
     }
     .search{
@@ -898,4 +898,13 @@ section{
 }
 #err{
     color: #d30d0d;
+}
+.arr-col .rating .review{
+    white-space: nowrap;
+  overflow: hidden;
+  max-width: 110px; /* adjust as needed */
+
+}
+#contact{
+    cursor: pointer;
 }

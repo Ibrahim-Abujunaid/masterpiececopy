@@ -7,11 +7,11 @@ if (isLoggedIn === 'true' && Role == 1) {
 
   Logout.addEventListener('click', (e) => {
       // Log out logic
-      window.location.href = '../../../index.html';
+      window.location.href = '/index.html';
       sessionStorage.clear();
   });
 } else {
-    window.location.href = '../../../login/login.html';
+    window.location.href = '/login/login.html';
 }
 let brandCounter = 0;
 
@@ -79,7 +79,18 @@ document.getElementById('brandForm').addEventListener('submit', function (event)
     event.preventDefault();
 
     // Get brand name from the form
-    const brandName = document.getElementById('Brand').value;
+    const brandNameInput = document.getElementById('Brand');
+    const brandName = brandNameInput.value;
+
+    // Validate the brand name (allow only letters)
+    if (!isValidBrandName(brandName)) {
+        // Display an error message in the 'err' div
+        document.getElementById('err').innerText = 'Please enter a valid Location name (letters only).';
+        return;
+    } else {
+        // Clear any previous error message
+        document.getElementById('err').innerText = '';
+    }
 
     // Make API request to create a new brand
     fetch('http://127.0.0.1:8000/api/locations/', {
@@ -95,11 +106,19 @@ document.getElementById('brandForm').addEventListener('submit', function (event)
     })
         .then(response => response.json())
         .then(createdBrand => {
-            // alert('Location created successfully:', createdBrand);
+            // Redirect to the next page after successful creation
             window.location.href = 'edit1.html';
             // Handle success, e.g., show a success message
             console.log('Brand created successfully:', createdBrand);
         })
+        .catch(error => {
+            // Handle errors, e.g., display an error message
+            console.error('Error creating brand:', error);
+        });
 });
 
+function isValidBrandName(name) {
+    // Use a regular expression to validate that the name contains only letters
+    return /^[A-Za-z]+$/.test(name);
+}
 

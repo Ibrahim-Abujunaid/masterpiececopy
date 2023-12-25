@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function populateCarDetails(car) {
     document.getElementById('carImage').src = `http://127.0.0.1:8000/car/img/${car.img}`;
-    document.getElementById('carName').textContent = car.brand;
+    document.getElementById('carName').textContent = `${car.brand} ${car.model ? ` ${car.model}` : ''}`;
     document.getElementById('carDetails').innerHTML = `
             <div>
                 <span><i class="fa-solid fa-gear"></i>Transmission</span>
@@ -53,7 +53,7 @@ function initializeFlatpickr(bookedDates) {
     const today = new Date().toISOString().split('T')[0];
 
     // Set up Flatpickr for rental date input
-    flatpickr(rentalDateInput, {
+     flatpickr(rentalDateInput, {
         dateFormat: 'Y-m-d',
         minDate: today,
         disable: bookedDates, // Disable booked dates
@@ -62,14 +62,18 @@ function initializeFlatpickr(bookedDates) {
             if (selectedDates.length > 0) {
                 const selectedDate = selectedDates[0];
                 const returnMinDate = new Date(selectedDate);
-                returnMinDate.setDate(returnMinDate.getDate()); // Set minimum return date to the next day
-                flatpickr(returnDateInput, { minDate: returnMinDate });
+                returnMinDate.setDate(returnMinDate.getDate() ); // Set minimum return date to the next day
+                returnDateInstance.set('minDate', returnMinDate);
+                
+                // Disable booked dates in the return date input
+                const disabledDates = bookedDates.map(date => date.toISOString().split('T')[0]);
+                returnDateInstance.set('disable', disabledDates);
             }
         },
     });
-
-    // Set up Flatpickr for return date input
-    flatpickr(returnDateInput, {
+    
+    // Initialize Flatpickr for return date input
+    const returnDateInstance = flatpickr(returnDateInput, {
         dateFormat: 'Y-m-d',
         minDate: today,
         disable: bookedDates, // Disable booked dates
@@ -117,8 +121,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
         .then(response => response.json())
         .then(data => {
             // Handle the response from the server as needed
-            
-            alert("Booking pending wait landloard Accept", start, end);
+            alert(data, start, end);
             window.location.href="/profile/Orders/orders.html";
             console.log('Booking successful:', data);
             // You may want to redirect or show a success message
@@ -178,6 +181,12 @@ function displayComments(commentSection, comments) {
 }
 
 function postComment() {
+    let isLoggedin = sessionStorage.getItem('isLoggedin');
+        console.log(isLoggedin);
+        if (!isLoggedin) {
+                alert('Login to Add Comment.');
+                return;
+        }
     const commentInput = document.getElementById('commentInput').value;
     const userId = sessionStorage.getItem('userId');
     const carId = window.location.hash.substring(1);

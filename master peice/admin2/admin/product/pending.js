@@ -76,9 +76,9 @@ if (isLoggedIn === 'true') {
 
   Logout.addEventListener('click', (e) => {
       // Log out logic
-      window.location.href = '../../../index.html';
+      window.location.href = '/index.html';
       sessionStorage.clear();
   });
 } else {
-    window.location.href = '../../../login/login.html';
+    window.location.href = '/login/login.html';
 }

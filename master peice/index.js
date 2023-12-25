@@ -12,9 +12,9 @@ function find() {
     f=document.getElementById('fuel_type').value;
     p=document.getElementById('price').value;
     if (d==1) {
-        redirect=`CarWdriver/CarWdriver.html?price=${p}`;
+        redirect=`/CarWdriver/CarWdriver.html?price=${p}`;
     }else{
-        redirect=`shop/shop.html?price=${p}`;
+        redirect=`/shop/shop.html?price=${p}`;
     }
     redirect+= (l != 0) ? `&location=${l}` :'';
     redirect+= (b != 0) ? `&brand=${b}` :'';
@@ -42,7 +42,7 @@ function find() {
              <span class="text"><i class="fa-solid fa-plus"></i>Happy Clients</span>
          </div>
          <div class="container">
-             <img src="./img/icons/3.JPG" alt="">
+             <img src="./img/icons/1.JPG" alt="">
              <span class="num" data-value="${countData.CarWithDriver}">${countData.CarWithDriver}</span>
              <span class="text"><i class="fa-solid fa-plus"></i>Car with Drivers</span>
          </div>
@@ -153,7 +153,7 @@ function populateCarContainer(cars) {
                     </div>
                     <div class="price">
                         <p>${car.price_day}JD/Day</p>
-                        <a href='SingleCar/SingleCar.html#${car.id}'><button>Rent Now</button></a>
+                        <a href='/SingleCar/SingleCar.html#${car.id}'><button>Rent Now</button></a>
                     </div>
                 `;
 
@@ -232,7 +232,7 @@ function populateCarContainer1(cars) {
                     </div>
                     <div class="price">
                         <p>${car.price_day}JD/Day</p>
-                        <a href='SingleCarWdriver/SingleCarWdriver.html#${car.id}'><button>Rent Now</button></a>
+                        <a href='/SingleCarWdriver/SingleCarWdriver.html#${car.id}'><button>Rent Now</button></a>
                     </div>
                 `;
 

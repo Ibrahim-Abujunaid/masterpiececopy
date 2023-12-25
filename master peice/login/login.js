@@ -53,11 +53,11 @@ function validateLoginForm() {
 
         // Redirect based on role id
         if (roleId === 2) {
-            window.location.href = "../Renter/renter.html";
+            window.location.href = "/Renter/renter.html";
         } else if (roleId === 3) {
-            window.location.href = "../index.html";
+            window.location.href = "/index.html";
         } else if (roleId === 1) {
-            window.location.href = "../admin2/admin/Salls/index.html";
+            window.location.href = "/admin2/admin/Salls/index.html";
         }
     })
     .catch(error => {

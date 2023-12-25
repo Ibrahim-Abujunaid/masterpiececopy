@@ -15,14 +15,14 @@
     <!-- nav bar-section -->
     <header class="header">
         <div class="logo">
-           <a href="../index.html"><img src="../img/logo/lynx22-removebg-preview.png" alt=""></a>
+            <a href="/index.html"><img src="../img/logo/lynx22-removebg-preview.png" alt=""></a>
         </div>
         <nav>
             <ul id="nav1">
                 <li class="active"><a href="renter.html">Dashboard</a></li>
-                <li><a href="../About us/Aboutus.html">About us</a></li>
-                <li><a href="../Contact Us/Contactus.html">Contact us</a></li>
-                <li id="addBtn"><a href="../profile/profile.html">Profile</a></li>
+                <li><a href="/About us/Aboutus.html">About us</a></li>
+                <li><a href="/Contact Us/Contactus.html">Contact us</a></li>
+                <li id="addBtn"><a href="/profile/profile.html">Profile</a></li>
                 <li><a href="#" onclick="logout()">Logout</a></li>
             </ul>
 
@@ -35,7 +35,7 @@
     <section>
         <div class="name">
             <h2>List Of all Mr. <span id="name"> Ibrahim Abujunaid</span> rentals</h2>
-            
+
             <button id="addCar"><i class="fa-solid fa-plus"></i>Add Car</button>
         </div>
         <div class="admin-content">
@@ -54,7 +54,7 @@
                         <th colspan="2">Action</th>
                     </thead>
                     <tbody id="carTableBody">
-                        
+
 
                     </tbody>
                 </table>
@@ -70,12 +70,12 @@
     <div class="add-car-form" id="addCarForm">
         <h2>Add a New Car</h2>
         <form id="carForm" enctype="multipart/form-data">
-                   
+
             <label for="carName">BrandName:</label>
-            <select id="brands" name="BrandName">
-            <option value="">Choose</option>    
+            <select id="brands" name="BrandName" required>
+                <option value="">Choose</option>
             </select>
-                
+
             <label for="cost">Model:</label>
             <input type="text" id="model" placeholder="Model...">
 
@@ -97,7 +97,7 @@
 
             <label for="location">Location:</label>
             <select id="location" required>
-             <option value="">Choose</option>
+                <option value="">Choose</option>
             </select>
 
             <label for="driver">Driver:</label>
@@ -110,10 +110,10 @@
             <input type="number" id="cost" placeholder="should inter a number" required>
 
             <label for="carImage">Car Image:</label>
-            <input type="file" id="carImage" name="files[]" multiple accept="image/*" required>
+            <input type="file" id="carImage" name="files[]"  accept="image/*" required>
 
             <label for="Licence">Car License:</label>
-            <input type="file" id="CarLicense" name="files[]" multiple accept="image/*">
+            <input type="file" id="CarLicense" name="files[]"  accept="image/*" required>
 
             <button id="addVehicle" type="submit">Add Car</button>
         </form>
@@ -125,10 +125,10 @@
         <h2>Driver Details</h2>
         <form id="driverDetailsForm" enctype="multipart/form-data">
             <label for="driverImage">Driver Image:</label>
-            <input type="file" id="driverImage" name="driverImage" required>
+            <input type="file" id="driverImage"  accept="image/*" name="driverImage" required>
 
             <label for="driverLicense">Driver License:</label>
-            <input type="file" id="driverLicense" name="driverLicense" required>
+            <input type="file" id="driverLicense"  accept="image/*" name="driverLicense" required>
 
             <label for="driverAge">Age:</label>
             <input type="number" id="driverAge" name="driverAge" required>
@@ -142,7 +142,7 @@
     <section class="footer">
         <div class="footer-row">
             <div class="footer-col">
-                <img src="../img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt="">
+                <img src="/img/logo/wGkC8OxwRAvAAAAAElFTkSuQmCC.png" alt="">
                 <p class="text">Seamless rentals, your way. Rent a car or elevate your experience with a chauffeur –
                     enjoy the journey, stress-free.</p>
                 <span><i class="fa-solid fa-phone"></i>+962 78 967 1075</span>
@@ -169,7 +169,8 @@
             </div>
             <div class="footer-col">
                 <h5>Newsletter</h5>
-                <p class="text">Stay ahead of the curve! ️ Subscribe and we'll keep you updated on the latest car trends.</p>              
+                <p class="text">Stay ahead of the curve! ️ Subscribe and we'll keep you updated on the latest car
+                    trends.</p>
                 <div id="err"></div>
                 <input type="text" id="subscribe" placeholder="your Email">
                 <button id="subscribeBtn">Subscribe Now<i class="fa-solid fa-paper-plane"></i></button>
@@ -188,6 +189,7 @@
 
 
     <script src="renter.js"></script>
+    
 </body>
 
 </html>
