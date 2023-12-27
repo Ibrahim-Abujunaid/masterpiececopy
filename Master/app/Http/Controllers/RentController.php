@@ -108,7 +108,7 @@ class RentController extends Controller
             DB::raw('CASE WHEN withDriver = 1 THEN "yes" ELSE "no" END as withDriver'),
             DB::raw('CASE WHEN Accept = 1 THEN "Accepted" ELSE "Pending" END as status'))
             ->where('cars.owner_id',$id)->orderBy("rents.created_at","desc")->get() ;
-            // return response()->json(compact('rent'));
+
         }elseif( $user->role_id == 3) {
             $rent = Rent::where('user_id',$id)
             ->join('cars', 'cars.id', '=', 'rents.car_id')
@@ -122,7 +122,7 @@ class RentController extends Controller
             DB::raw('CASE WHEN Accept = 1 THEN "Accepted" ELSE "Pending" END as status'))
             ->orderBy("rents.created_at","desc")->get();
         }
-        // $rent;
+
         return response()->json($rent);
     }
 
