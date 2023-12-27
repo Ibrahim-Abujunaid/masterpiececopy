@@ -32,7 +32,7 @@ fetch(`http://127.0.0.1:8000/api/rents/${userId}`)
                         <p><strong>Fuel Type:</strong>${rent.fuel_type}</p>
                         <p><strong>Location:</strong>${rent.location}</p>
                         <p><strong>Driver:</strong>${rent.withDriver}</p>
-                        <p><strong>Cost:</strong>${rent.total_price} JD</p>
+                        <p><strong>Total Cost:</strong>${rent.total_price} JD</p>
                         <div class="stars" data-rent-id="${rent.id}">
                             <form class="${rent.status.toLowerCase() == 'pending' ? 'invisible' : ''}">
                                 <input class="star star-5" id="star-5-${rent.id}" type="radio" name="rating" value="5" />

@@ -38,7 +38,7 @@ function populateCarDetails(car) {
                 <span>${car.location}</span>
             </div>
             <div>
-                <span><i class="fa-solid fa-greater-than"></i>Renter</span>
+                <span><i class="fa-solid fa-greater-than"></i>Landloard</span>
                 <span>${car.name}</span>
             </div>
         `;

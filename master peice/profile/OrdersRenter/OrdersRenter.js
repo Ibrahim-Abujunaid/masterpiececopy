@@ -40,7 +40,7 @@ fetch(`http://127.0.0.1:8000/api/rents/${userId}`)
                             <p><strong>Fuel Type:</strong> ${rent.fuel_type}</p>
                             <p><strong>Location:</strong> ${rent.location}</p>
                             <p><strong>Driver:</strong> ${rent.withDriver}</p>
-                            <p><strong>Cost:</strong> ${rent.total_price} JD/Day</p>
+                            <p><strong>Total Cost:</strong> ${rent.total_price} JD</p>
                             <p class="status ${rent.status.toLowerCase()}">${rent.status}</p>
                             <div class="actions">
                                 <span class="${rent.status.toLowerCase() == 'accepted' ? 'invisible' : ''}">
