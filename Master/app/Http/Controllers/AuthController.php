@@ -50,7 +50,7 @@ class AuthController extends Controller
             'user' => $user,
             'token' => $token
         ];
-        return response()->json($res, 201);
+        return response()->json($res, 200);
         } else {
             return response()->json("Your provided credentials do not match in our records."); 
         }
