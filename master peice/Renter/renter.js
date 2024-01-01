@@ -1,10 +1,10 @@
-let isLoggedIn=sessionStorage.getItem('isLoggedin');
-let Role=sessionStorage.getItem('roleId');
-console.log(Role,isLoggedIn)
-if (isLoggedIn=='true'&&Role=='2'){
+let isLoggedIn = sessionStorage.getItem('isLoggedin');
+let Role = sessionStorage.getItem('roleId');
+console.log(Role, isLoggedIn)
+if (isLoggedIn == 'true' && Role == '2') {
     console.log('Login succefully');
-}else{
-    window.location.href='./../login/login.html';
+} else {
+    window.location.href = './../login/login.html';
 }
 
 function updateCarAvailability(carId, checkbox) {
@@ -179,22 +179,32 @@ document.addEventListener("DOMContentLoaded", function () {
             const location = document.getElementById("location").value;
             const transmission = document.getElementById("transmission").value;
             const fuelType = document.getElementById("fuelType").value;
-            
+            const carImageFile = document.getElementById("carImage").files[0];
+            const carLicenseFile = document.getElementById("CarLicense").files[0];
+
             // Validate cost
             if (cost < 1) {
                 alert("Invalid cost");
                 return;
             }
-            
+
             // Validate other required fields
             if (!driver || !brands || !location || !transmission || !fuelType) {
                 alert("Please fill in all required fields");
                 return;
             }
-            
+            if (!carImageFile || !carLicenseFile) {
+                alert("Both image and car license are required");
+            }
+
             const formData = new FormData();
-            formData.append("img", document.getElementById("carImage").files[0]);
+            if (!carImageFile || !carLicenseFile) {
+                alert("Both image and car license are required");
+            }else{
+                formData.append("img", document.getElementById("carImage").files[0]);
             formData.append("car_license", document.getElementById("CarLicense").files[0]);
+            }
+            
             formData.append("price_day", cost);
             formData.append("withDriver", driver);
             formData.append("model", model);
@@ -205,9 +215,9 @@ document.addEventListener("DOMContentLoaded", function () {
             formData.append("location_id", location);
             formData.append("gear", transmission);
             formData.append("fuel_type", fuelType);
-            
+
             // Continue with your fetch or other operations
-            
+
             // Perform the POST request
             fetch('http://127.0.0.1:8000/api/cars', {
                 method: 'POST',
@@ -246,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => response.json())
             .then(data => {
-                
+
                 // Handle successful upload
                 console.log('Driver license uploaded successfully:', data);
             })
@@ -259,30 +269,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get user ID from sessionStorage
     const userId = sessionStorage.getItem("userId");
 
-fetch(`http://127.0.0.1:8000/api/allcars/${userId}`)
-    .then(response => response.json())
-    .then(data => {
-        // Populate the table with fetched data
-        populateTable(data);
-    })
-    .catch(error => console.error('Error fetching data:', error));
+    fetch(`http://127.0.0.1:8000/api/allcars/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            // Populate the table with fetched data
+            populateTable(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
 
-function populateTable(data) {
-    const tableBody = document.getElementById("carTableBody");
+    function populateTable(data) {
+        const tableBody = document.getElementById("carTableBody");
 
-    // Clear existing rows
-    tableBody.innerHTML = "";
+        // Clear existing rows
+        tableBody.innerHTML = "";
 
-    // Iterate through the data and create table rows
-    data.forEach(car => {
-        const row = document.createElement("tr");
+        // Iterate through the data and create table rows
+        data.forEach(car => {
+            const row = document.createElement("tr");
 
-        // Create unique checkbox ID for each row
-        const checkboxId = `available_${car.id}`;
-        console.log(car)
+            // Create unique checkbox ID for each row
+            const checkboxId = `available_${car.id}`;
+            console.log(car)
 
-        // Create cells for each column
-        row.innerHTML += `
+            // Create cells for each column
+            row.innerHTML += `
             <td><input type="checkbox" onchange="updateCarAvailability(${car.id}, this)" id="${checkboxId}" class="Availability"></td>
             <td><img src="http://127.0.0.1:8000/car/img/${car.img}"></td>
             <td>${car.brand}</td>
@@ -294,17 +304,17 @@ function populateTable(data) {
             <td class="${car.status.toLowerCase()}">${car.status}</td>
             <td class="delete" onclick="deleteCar(${car.id})"><i class="fa-solid fa-trash"></i></td>
         `;
-        tableBody.appendChild(row);
-        // Check the checkbox based on the availability property
-        document.getElementById(checkboxId).checked = car.availability === 1;
-    });
-}
+            tableBody.appendChild(row);
+            // Check the checkbox based on the availability property
+            document.getElementById(checkboxId).checked = car.availability === 1;
+        });
+    }
 
 
     // Function to handle the checkbox change and update car availability
 
-  
-   
+
+
 })
 // ----------------------------------------- availabality -----------------------------
 

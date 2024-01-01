@@ -637,6 +637,9 @@ section{
    transform: scale(1.2);
 }
 .arr-row .arr-col h5{
+    white-space: nowrap;
+  overflow: hidden;
+  max-width: 220px;
     font-size: 1.3rem;
     padding:1rem 0 ;
 }
